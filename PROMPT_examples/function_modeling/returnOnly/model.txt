@@ -1,0 +1,12 @@
+global settings:
+
+data models:
+
+function models:
+
+returnonly bar;
+
+lifecycle model:
+
+entry-point foo
+
