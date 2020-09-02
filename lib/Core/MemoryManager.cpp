@@ -626,8 +626,9 @@ MemoryObject *MemoryManager::allocate(uint64_t size, bool isLocal,
   MemoryObject *res = new MemoryObject(address, size, isLocal, isGlobal, false,
                                        allocSite, this, count, t);
 
-  llvm::outs() << "Allocated object of size " << size << " at address " << address << "\n";
-  llvm::outs() << "Basexpr=" << res->getBaseExpr() << "\n";
+  llvm::errs() << "Allocated object of size " << size << " at address " << address << "\n";
+  llvm::errs() << "Basexpr=" << res->getBaseExpr() << "\n";
+  llvm::errs() << "Basetype=" << getTypeName(t) << "\n";
 
   objects.insert(res);
   /* SYSREL EXTENSION */

@@ -28,6 +28,8 @@ data models:
  // (<expression) where <var_1> is <typename> field <number_1> 
                                [, <var_2> is sizeof <typename> field <number_2>];  
 
+ // (<funcname> = x) where <funcname> is function, <var> is <type> field <number>;
+
 function models:
 
  // alloc <funcname>  sizearg <argno> initzero <boolean> symbolize <boolean>;

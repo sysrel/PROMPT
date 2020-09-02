@@ -66,7 +66,6 @@ extern std::map<std::string, std::vector<std::string> > inferenceClue;
 %token GLOBAL
 %token HAVOC
 %token HAVOCING
-%token<y_ident> L_IDENT
 %token IF
 %token IS
 %token INIT
@@ -112,6 +111,7 @@ extern std::map<std::string, std::vector<std::string> > inferenceClue;
 %token VALUE
 %token WHERE
 %token WITH
+%token<y_ident> L_IDENT
 
 %left PLUSS MINUSS
 %left TIMESS
@@ -335,10 +335,8 @@ bound_constraint:
 		$$ = new BoundAST { $expression, bindings };
                 std::string entity = ""; std::string type = ""; std::string comptype = "";
                 for(auto bi : bindings) {
-                   if (entity == "")
+                   if (entity == "" && bi.second.comptype != "funcname")
                       entity = bi.second.entity;
-                   else if (entity != bi.second.entity)
-                     assert(0 && "Multiple data types in the same constraint!\n");
                    if (type == "")
                       type = bi.second.type;
                    else if (type != bi.second.type)
@@ -362,9 +360,12 @@ bound_constraint:
                    else if (isSimpleEquality(*$$)) {
                       // equality constraints will be applied first
                       s.insert(s.begin(), *$$);
+                      std::cerr << "Recorded simple equality for type " << entity << "\n";
                    }
                    else s.push_back(*$$);
                    fieldConstraintMap[entity] = s;
+                   std::cerr << "Storing a constraint for " << entity << "\n";
+                   $$->ast->print();
                 }
                 else if (type == "func") {
                    if (comptype == "return") {
@@ -401,9 +402,13 @@ bound_constraint:
 
 expression:
 	INTEGER  { $$ = new ConstantNode($1); }
-        | L_IDENT { std::string id($1); $$ = new IdentifierNode(id); }
         | TRUEVAL { $$ = new ConstantNode(1); }
         | FALSEVAL { $$ = new ConstantNode(0); }
+        | L_IDENT { 
+             std::string id($1); 
+             std::cerr << "identifier: " << id << "\n"; 
+             $$ = new IdentifierNode(id); 
+        }
 	| NOTS expression { 
           $$ = new ASTNode(NEG); 
           $$->addChild($2);
@@ -476,6 +481,11 @@ bindings:
 
 binding:
 	L_IDENT IS entity {
+                if ($entity->type == "type" && $entity->comptype == "funcname") {
+                    std::string f($1);
+                    $entity->entity = f;
+                    std::cerr << "Recorded " << f << " as a funcname binding\n";
+                }
 		$$ = new std::pair<std::string, Binding> { $L_IDENT, *$entity };
 		delete $entity;
 	}
@@ -491,6 +501,9 @@ entity:
 		// entity: either a type or function name
 		$$ = new Binding { "type", "sizeof", $L_IDENT, (unsigned int)$INTEGER };
 	}
+        | FUNCTION {
+               $$ = new Binding { "type", "funcname", "", (unsigned int)0 };
+        }
 	| L_IDENT ARG INTEGER {
 		$$ = new Binding { "func", "none", $L_IDENT, (unsigned int)$INTEGER };
 	}

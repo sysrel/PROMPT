@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_HOME_TUBA_DOCUMENTS_TOOLS_PROMPT_PMGUIDEDSYMEX_KLEE_LIB_PROSE_PARSER_H_INCLUDED
-# define YY_YY_HOME_TUBA_DOCUMENTS_TOOLS_PROMPT_PMGUIDEDSYMEX_KLEE_LIB_PROSE_PARSER_H_INCLUDED
+#ifndef YY_YY_HOME_TUBA_DOCUMENTS_RELEASES_PROMPT_LIB_PROSE_PARSER_H_INCLUDED
+# define YY_YY_HOME_TUBA_DOCUMENTS_RELEASES_PROMPT_LIB_PROSE_PARSER_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -68,52 +68,52 @@ extern int yydebug;
     GLOBAL = 278,
     HAVOC = 279,
     HAVOCING = 280,
-    L_IDENT = 281,
-    IF = 282,
-    IS = 283,
-    INIT = 284,
-    INITZERO = 285,
-    INLINE = 286,
-    INTEGER = 287,
-    LIFECYCLE = 288,
-    LOOP = 289,
-    MEMARG = 290,
-    MEMRETURN = 291,
-    MODEL = 292,
-    MODELS = 293,
-    MODELED = 294,
-    NULL_TOKEN = 295,
-    OF = 296,
-    OFF = 297,
-    ON = 298,
-    PATTERN = 299,
-    LTS = 300,
-    LEQS = 301,
-    GTS = 302,
-    GEQS = 303,
-    EQS = 304,
-    NOTS = 305,
-    NEQS = 306,
-    PLUSS = 307,
-    MINUSS = 308,
-    TIMESS = 309,
-    RETURN = 310,
-    RETURNONLY = 311,
-    RETURNOF = 312,
-    SETTINGS = 313,
-    SINGLETON = 314,
-    SINGLETONS = 315,
-    SIZE = 316,
-    SIZEARG = 317,
-    SIZEOF = 318,
-    SKIP = 319,
-    SYMBOLIZE = 320,
-    TO = 321,
-    TRUEVAL = 322,
-    TYPE = 323,
-    VALUE = 324,
-    WHERE = 325,
-    WITH = 326
+    IF = 281,
+    IS = 282,
+    INIT = 283,
+    INITZERO = 284,
+    INLINE = 285,
+    INTEGER = 286,
+    LIFECYCLE = 287,
+    LOOP = 288,
+    MEMARG = 289,
+    MEMRETURN = 290,
+    MODEL = 291,
+    MODELS = 292,
+    MODELED = 293,
+    NULL_TOKEN = 294,
+    OF = 295,
+    OFF = 296,
+    ON = 297,
+    PATTERN = 298,
+    LTS = 299,
+    LEQS = 300,
+    GTS = 301,
+    GEQS = 302,
+    EQS = 303,
+    NOTS = 304,
+    NEQS = 305,
+    PLUSS = 306,
+    MINUSS = 307,
+    TIMESS = 308,
+    RETURN = 309,
+    RETURNONLY = 310,
+    RETURNOF = 311,
+    SETTINGS = 312,
+    SINGLETON = 313,
+    SINGLETONS = 314,
+    SIZE = 315,
+    SIZEARG = 316,
+    SIZEOF = 317,
+    SKIP = 318,
+    SYMBOLIZE = 319,
+    TO = 320,
+    TRUEVAL = 321,
+    TYPE = 322,
+    VALUE = 323,
+    WHERE = 324,
+    WITH = 325,
+    L_IDENT = 326
   };
 #endif
 
@@ -139,7 +139,7 @@ union YYSTYPE
 	char *y_ident;
         Op op;
 
-#line 143 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.h" /* yacc.c:1909  */
+#line 143 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -166,4 +166,4 @@ extern YYSTYPE yylval;
 extern YYLTYPE yylloc;
 int yyparse (void);
 
-#endif /* !YY_YY_HOME_TUBA_DOCUMENTS_TOOLS_PROMPT_PMGUIDEDSYMEX_KLEE_LIB_PROSE_PARSER_H_INCLUDED  */
+#endif /* !YY_YY_HOME_TUBA_DOCUMENTS_RELEASES_PROMPT_LIB_PROSE_PARSER_H_INCLUDED  */

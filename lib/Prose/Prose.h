@@ -51,10 +51,18 @@ class IdentifierNode : public ASTNode {
   virtual void print();
 };
 
+class FunctionNode : public ASTNode {
+ public:
+   std::string value;
+   FunctionNode(std::string s);
+   std::string getValue();
+  virtual void print();
+};
+
 
 struct Binding {
   std::string type;  
-  std::string comptype; // "sizeof", "argsize", "return", or "none"
+  std::string comptype; // "sizeof", "argsize", "return", "funcname", or "none"
   std::string entity;
   unsigned index;
 };

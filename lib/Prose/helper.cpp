@@ -4,6 +4,7 @@
 #include "llvm/Support/CommandLine.h"
 #include "helper.h"
 #include "parser.h"
+#include <iostream>
 
 #define true 1
 #define false 0
@@ -11,7 +12,7 @@
 /*
  * global variable
  */
-int debug=0;
+int debug=1;
 
 /*
  * lokal variable
@@ -187,8 +188,12 @@ void BeginToken(char *t) {
   yylloc.last_column = nTokenStart + nTokenLength - 1;
 
   if (  debug  ) {
-    printf("Token '%s' at %d:%d next at %d\n", dumpString(t),
+    std::cerr << "Token " << dumpString(t) << "at " 
+              << yylloc.first_column << ":" << yylloc.last_column 
+              << nTokenNextStart << "\n";     
+           
+    /*printf("Token '%s' at %d:%d next at %d\n", dumpString(t),
                         yylloc.first_column,
-                        yylloc.last_column, nTokenNextStart);
+                        yylloc.last_column, nTokenNextStart);*/
   }
 }

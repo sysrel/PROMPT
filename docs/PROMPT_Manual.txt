@@ -115,7 +115,12 @@ relational operators (>, >=, <, <=, =, !=). These model variables need to be bou
 entities in the code using comma separated ``<ident> is <entity>'' clauses. The types of 
 entities include the fields of struct types (<ident> field <number>), the arguments (<ident> 
 arg <number>) or the return values (returnof <ident>) of functions, and the sizes of arrays 
-or pointer fields (sizeof <ident> field <number>). The field and argument numbers start at 0 
+or pointer fields (sizeof <ident> field <number>). Function pointer fields can be initialized 
+through equality constraints in the form of ``(<funcname> = x) where <funcname> is function, 
+<var> is <type> field <number>''.
+
+
+The field and argument numbers start at 0 
 and consecutive numbers are used based on the order of their declaration in the function 
 signature or in the type definition. These constraints get enforced on the relevant objects 
 during lazy initialization, handling of callsites for functions modeled using the generic 

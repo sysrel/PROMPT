@@ -1,6 +1,9 @@
 #include <cstdlib>
 #include "Prose.h"
 #include "llvm/Support/raw_ostream.h"
+#include "llvm/IR/Module.h"
+#include "klee/Internal/Module/KModule.h"
+
 
 #define SEP '#'
 
@@ -10,6 +13,8 @@ Op checkOp(std::string t);
 pstate checkpstate(char c) ;
 
 unsigned getWidth(BoundAST &bast,ASTNode *n,const StructType *st) ;
+
+extern KModule *kmoduleExt;
 
 void printOp(Op op) {
  if (op == LT)
@@ -92,6 +97,19 @@ void IdentifierNode::print() {
   llvm::errs() << value << "\n";
 }
 
+
+FunctionNode::FunctionNode(std::string s) {
+  oper = NOOP;
+  value = s;
+}
+
+std::string FunctionNode::getValue() {
+  return value;
+}
+
+void FunctionNode::print() {
+  llvm::errs() << "function " << value << "\n";
+}
 
 // buffer has tokens in the form token_1 SEP token_2 SEP ... token_n SEP
 
@@ -489,6 +507,18 @@ bool applyEquality(BoundAST &bast, const MemoryObject *mo, ObjectState *obj,
             value = ConstantExpr::alloc(count, width);
          }
       }
+      else if (b1.comptype == "funcname") {
+         Function *f = kmoduleExt->module->getFunction(in1->value); 
+         if (f) { 
+            llvm::errs() << "Found function " << in1->value << "\n";
+            value = Expr::createPointer((uint64_t)f);
+            width = 64;
+         } 
+        else {
+           llvm::errs() << "Could not find function " << in1->value << "\n";
+           exit(1);
+        }
+      }
    }
    if (dynamic_cast<IdentifierNode*>(n2)) {
       IdentifierNode *in2 = (IdentifierNode*)n2;
@@ -498,6 +528,18 @@ bool applyEquality(BoundAST &bast, const MemoryObject *mo, ObjectState *obj,
          if (o == offset) {
             value = ConstantExpr::alloc(count, width);
          }
+      }
+      else if (b2.comptype == "funcname") {
+         Function *f = kmoduleExt->module->getFunction(in2->value); 
+         if (f) { 
+            llvm::errs() << "Found function " << in2->value << "\n";
+            value = Expr::createPointer((uint64_t)f);
+            width = 64;
+         } 
+        else {
+           llvm::errs() << "Could not find function " << in2->value << "\n";
+           exit(1);
+        }
       }
    }
    assert(!value.isNull());
@@ -981,6 +1023,11 @@ bool isSimpleEquality(BoundAST &bast) {
          if (b1.comptype == "sizeof" || b2.comptype == "sizeof" || 
              b1.comptype == "argsize" || b2.comptype == "argsize")
             return true;
+         else if ((b1.comptype == "none" && b2.comptype == "funcname") || 
+                  (b1.comptype == "funcname" && b2.comptype == "none")) {
+            llvm::errs() << "funcptr init as simple equality\n";
+            return true;       
+         }
       }
    }
    return false;

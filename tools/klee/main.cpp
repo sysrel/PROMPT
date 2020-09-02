@@ -2250,7 +2250,7 @@ int main(int argc, char **argv, char **envp) {
   if (APIModel.c_str() != "") {
      yyin = fopen(APIModel.c_str(),"r");
      if (yyparse()) {
-        llvm::errs() << "Parsin error in the API Prose model in " << APIModel << "\n";
+        llvm::errs() << "Parsing error in the API Prose model in " << APIModel << "\n";
         exit(1);
      }
      else llvm::errs() << "Parsed API Prose model in " << APIModel << "\n";

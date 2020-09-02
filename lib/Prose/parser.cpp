@@ -105,7 +105,7 @@ extern std::set<std::string> lazyInitSingles;
 extern std::map<std::string, std::vector<std::string> > inferenceClue;
 
 
-#line 109 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:339  */
+#line 109 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -125,8 +125,8 @@ extern std::map<std::string, std::vector<std::string> > inferenceClue;
 
 /* In a future release of Bison, this section will be replaced
    by #include "parser.h".  */
-#ifndef YY_YY_HOME_TUBA_DOCUMENTS_TOOLS_PROMPT_PMGUIDEDSYMEX_KLEE_LIB_PROSE_PARSER_H_INCLUDED
-# define YY_YY_HOME_TUBA_DOCUMENTS_TOOLS_PROMPT_PMGUIDEDSYMEX_KLEE_LIB_PROSE_PARSER_H_INCLUDED
+#ifndef YY_YY_HOME_TUBA_DOCUMENTS_RELEASES_PROMPT_LIB_PROSE_PARSER_H_INCLUDED
+# define YY_YY_HOME_TUBA_DOCUMENTS_RELEASES_PROMPT_LIB_PROSE_PARSER_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -163,52 +163,52 @@ extern int yydebug;
     GLOBAL = 278,
     HAVOC = 279,
     HAVOCING = 280,
-    L_IDENT = 281,
-    IF = 282,
-    IS = 283,
-    INIT = 284,
-    INITZERO = 285,
-    INLINE = 286,
-    INTEGER = 287,
-    LIFECYCLE = 288,
-    LOOP = 289,
-    MEMARG = 290,
-    MEMRETURN = 291,
-    MODEL = 292,
-    MODELS = 293,
-    MODELED = 294,
-    NULL_TOKEN = 295,
-    OF = 296,
-    OFF = 297,
-    ON = 298,
-    PATTERN = 299,
-    LTS = 300,
-    LEQS = 301,
-    GTS = 302,
-    GEQS = 303,
-    EQS = 304,
-    NOTS = 305,
-    NEQS = 306,
-    PLUSS = 307,
-    MINUSS = 308,
-    TIMESS = 309,
-    RETURN = 310,
-    RETURNONLY = 311,
-    RETURNOF = 312,
-    SETTINGS = 313,
-    SINGLETON = 314,
-    SINGLETONS = 315,
-    SIZE = 316,
-    SIZEARG = 317,
-    SIZEOF = 318,
-    SKIP = 319,
-    SYMBOLIZE = 320,
-    TO = 321,
-    TRUEVAL = 322,
-    TYPE = 323,
-    VALUE = 324,
-    WHERE = 325,
-    WITH = 326
+    IF = 281,
+    IS = 282,
+    INIT = 283,
+    INITZERO = 284,
+    INLINE = 285,
+    INTEGER = 286,
+    LIFECYCLE = 287,
+    LOOP = 288,
+    MEMARG = 289,
+    MEMRETURN = 290,
+    MODEL = 291,
+    MODELS = 292,
+    MODELED = 293,
+    NULL_TOKEN = 294,
+    OF = 295,
+    OFF = 296,
+    ON = 297,
+    PATTERN = 298,
+    LTS = 299,
+    LEQS = 300,
+    GTS = 301,
+    GEQS = 302,
+    EQS = 303,
+    NOTS = 304,
+    NEQS = 305,
+    PLUSS = 306,
+    MINUSS = 307,
+    TIMESS = 308,
+    RETURN = 309,
+    RETURNONLY = 310,
+    RETURNOF = 311,
+    SETTINGS = 312,
+    SINGLETON = 313,
+    SINGLETONS = 314,
+    SIZE = 315,
+    SIZEARG = 316,
+    SIZEOF = 317,
+    SKIP = 318,
+    SYMBOLIZE = 319,
+    TO = 320,
+    TRUEVAL = 321,
+    TYPE = 322,
+    VALUE = 323,
+    WHERE = 324,
+    WITH = 325,
+    L_IDENT = 326
   };
 #endif
 
@@ -234,7 +234,7 @@ union YYSTYPE
 	char *y_ident;
         Op op;
 
-#line 238 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:355  */
+#line 238 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -261,11 +261,11 @@ extern YYSTYPE yylval;
 extern YYLTYPE yylloc;
 int yyparse (void);
 
-#endif /* !YY_YY_HOME_TUBA_DOCUMENTS_TOOLS_PROMPT_PMGUIDEDSYMEX_KLEE_LIB_PROSE_PARSER_H_INCLUDED  */
+#endif /* !YY_YY_HOME_TUBA_DOCUMENTS_RELEASES_PROMPT_LIB_PROSE_PARSER_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 269 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:358  */
+#line 269 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -509,16 +509,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   182
+#define YYLAST   185
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  79
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  21
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  68
+#define YYNRULES  69
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  168
+#define YYNSTATES  169
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -575,9 +575,9 @@ static const yytype_uint16 yyrline[] =
      173,   187,   200,   201,   205,   206,   209,   211,   217,   218,
      222,   223,   224,   227,   236,   237,   240,   241,   242,   246,
      262,   269,   273,   278,   284,   288,   294,   300,   301,   305,
-     310,   314,   319,   324,   332,   403,   404,   405,   406,   407,
-     411,   415,   420,   425,   430,   435,   440,   446,   451,   456,
-     461,   467,   471,   478,   485,   489,   494,   497,   501
+     310,   314,   319,   324,   332,   404,   405,   406,   407,   412,
+     416,   420,   425,   430,   435,   440,   445,   451,   456,   461,
+     466,   472,   476,   483,   495,   499,   504,   507,   510,   514
 };
 #endif
 
@@ -589,15 +589,15 @@ static const char *const yytname[] =
   "$end", "error", "$undefined", "ALLOC", "ARG", "ARGS", "ARGSIZE",
   "ARRAY", "ASM", "BOUND", "BY", "CONTINUE", "CONSTANT", "DATA", "EMBEDS",
   "ENTRYPOINT", "EXCEPT", "FALSEVAL", "FIELD", "FREE", "FUNCPTRS", "FUNCS",
-  "FUNCTION", "GLOBAL", "HAVOC", "HAVOCING", "L_IDENT", "IF", "IS", "INIT",
+  "FUNCTION", "GLOBAL", "HAVOC", "HAVOCING", "IF", "IS", "INIT",
   "INITZERO", "INLINE", "INTEGER", "LIFECYCLE", "LOOP", "MEMARG",
   "MEMRETURN", "MODEL", "MODELS", "MODELED", "NULL_TOKEN", "OF", "OFF",
   "ON", "PATTERN", "LTS", "LEQS", "GTS", "GEQS", "EQS", "NOTS", "NEQS",
   "PLUSS", "MINUSS", "TIMESS", "RETURN", "RETURNONLY", "RETURNOF",
   "SETTINGS", "SINGLETON", "SINGLETONS", "SIZE", "SIZEARG", "SIZEOF",
   "SKIP", "SYMBOLIZE", "TO", "TRUEVAL", "TYPE", "VALUE", "WHERE", "WITH",
-  "':'", "';'", "','", "'['", "']'", "'('", "')'", "$accept", "API_model",
-  "global_settings", "global_setting", "choice", "regexplist",
+  "L_IDENT", "':'", "';'", "','", "'['", "']'", "'('", "')'", "$accept",
+  "API_model", "global_settings", "global_setting", "choice", "regexplist",
   "data_models", "data_model", "type_embedding", "function_models",
   "function_model", "numberList", "boolean", "lifecycle_model",
   "lifecycle_sequence", "lifecycle_entry", "bound_constraint",
@@ -635,23 +635,23 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-     -10,   -43,    19,   -51,   -79,   -79,     5,   -38,    -3,     8,
-      27,    22,    -6,    15,    16,   -27,    18,   -24,   -14,    24,
-     -20,   -34,    -1,    50,   -79,   -79,   -79,    21,   -79,    60,
-     -79,   -79,   -79,   -34,   -34,   -15,   -34,   -34,   -79,   -79,
-      33,    47,    51,   -12,     3,   -79,   -79,   -79,    28,     2,
-     -79,    64,   -79,   -79,   -79,   -12,   -12,   -79,   -12,    36,
-     -79,    53,   -79,    34,    62,    90,    46,   -12,   -12,   -12,
-     -12,   -12,   -12,   -12,   -12,   -12,    26,    70,    -2,    75,
-     -79,    80,    80,    80,    80,    80,    80,    90,    90,    62,
-      79,    86,   104,   114,   137,   106,   109,   117,    74,   -79,
-     -79,   120,    76,   -79,   -79,    77,    87,   118,   122,   142,
-      83,   -79,   -79,     0,    79,   130,   125,   126,   -79,   -37,
-     133,     1,   134,     7,   135,   136,   -79,   -79,   -79,   138,
-     -79,   139,   131,   -79,   140,    -9,   -79,    91,   -79,   163,
-     141,   143,   -79,   151,    -7,   -79,   -79,   -79,   144,   145,
-     146,   147,   -79,   -79,   148,   -79,   -79,   105,    97,   100,
-      -8,   -79,   -79,   -79,    -7,   -79,   -79,   -79
+     -20,   -34,    25,   -46,   -79,   -79,     0,   -33,    -8,    11,
+      23,    17,   -13,     9,    12,   -29,    14,   -26,   -18,    18,
+     -19,   -21,   -11,    42,   -79,   -79,   -79,    16,   -79,    48,
+     -79,   -79,   -79,   -21,   -21,    13,   -21,   -21,   -79,   -79,
+      24,     2,     3,   -12,     4,   -79,   -79,   -79,    19,     7,
+     -79,    46,   -79,   -79,   -12,   -12,   -79,   -79,   -12,    41,
+     -79,     5,   -79,    15,    68,    96,    51,   -12,   -12,   -12,
+     -12,   -12,   -12,   -12,   -12,   -12,    31,    62,    -2,    34,
+     -79,    86,    86,    86,    86,    86,    86,    96,    96,    68,
+      35,    38,    39,    64,    78,    81,    74,   109,    75,   -79,
+     -79,    57,    76,   -79,   -79,    77,    91,   119,   123,    83,
+     -79,   146,   -79,    -4,    35,    87,   126,   128,   -79,   -31,
+       1,    89,    90,   -79,    92,    93,     6,   -79,   -79,   -79,
+     133,   -79,    94,   135,    97,    -7,   -79,    98,   -79,   -79,
+     163,   -79,   151,   139,   141,    -9,   -79,   -79,   -79,   147,
+     143,   104,   145,   148,   -79,   -79,   -79,   -79,   113,   101,
+     105,    -5,   -79,   -79,   -79,    -9,   -79,   -79,   -79
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -664,25 +664,25 @@ static const yytype_uint8 yydefact[] =
        0,     0,     0,     0,     4,     5,    18,     0,     8,     0,
       15,    14,     6,     0,     0,     0,     0,     0,    13,    12,
        0,     0,     0,     0,     0,    21,    20,     7,     9,     0,
-      22,     0,    48,    46,    45,     0,     0,    47,     0,     0,
+      22,     0,    47,    45,     0,     0,    46,    48,     0,     0,
       19,     0,    24,     0,    49,    50,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,    10,     0,     0,
       60,    54,    55,    56,    57,    58,    59,    51,    52,    53,
        0,     0,     0,     0,     0,     0,     0,     0,     0,    31,
       23,     0,    44,    61,    16,    11,     0,     0,     0,     0,
-       0,    27,    25,     0,     0,     0,     0,     0,    32,     0,
-       0,     0,     0,     0,     0,     0,    63,    62,    17,     0,
-      30,     0,     0,    26,     0,    38,     2,    36,    39,     0,
-       0,     0,    67,     0,     0,    28,    33,    37,     0,     0,
-       0,     0,    66,    64,     0,    35,    34,     0,     0,     0,
-      41,    40,    68,    65,     0,    43,    42,    29
+      27,     0,    25,     0,     0,     0,     0,     0,    32,     0,
+       0,     0,     0,    66,     0,     0,     0,    63,    62,    17,
+       0,    30,     0,     0,     0,    38,     2,    36,    39,    26,
+       0,    68,     0,     0,     0,     0,    28,    33,    37,     0,
+       0,     0,     0,     0,    67,    64,    35,    34,     0,     0,
+       0,    41,    40,    69,    65,     0,    43,    42,    29
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -79,   -79,   -79,   -79,    -4,   -79,   -79,   -79,   -79,   -79,
-     -79,   -79,    14,   -79,   -79,    31,   -78,    48,   -79,    68,
+     -79,   -79,   -79,   -79,   -22,   -79,   -79,   -79,   -79,   -79,
+     -79,   -79,    20,   -79,   -79,    29,   -78,    53,   -79,    69,
      -79
 };
 
@@ -690,8 +690,8 @@ static const yytype_int8 yypgoto[] =
 static const yytype_int16 yydefgoto[] =
 {
       -1,     2,     6,    15,    32,   105,    35,    44,    45,    78,
-      98,   119,   157,   136,   137,   138,    46,    59,   102,   103,
-     126
+      98,   119,   158,   136,   137,   138,    46,    59,   102,   103,
+     127
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -699,71 +699,71 @@ static const yytype_int16 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int16 yytable[] =
 {
-      99,    92,   148,   148,   131,    52,   122,    40,    30,    31,
-     155,   140,     7,     1,    53,     3,   134,    93,     8,     4,
-      54,     5,    94,    16,    95,   141,   123,   135,    18,    38,
-      39,    96,    47,    48,     9,    17,    19,   132,    55,    10,
-      22,    56,    11,    20,    41,    12,    24,    23,    26,    21,
-      25,    29,    27,    42,    97,    57,    28,   124,    34,    33,
-     156,    36,    43,   125,   -41,    58,   149,   149,    37,    13,
-      14,    49,    61,    50,    62,    43,    60,    51,    63,    77,
-     165,    67,    68,    69,    70,    71,    91,    72,    73,    74,
-      75,    67,    68,    69,    70,    71,    90,    72,    73,    74,
-      75,   100,    79,    64,    65,   101,    66,    67,    68,    69,
-      70,    71,   104,    72,    76,    81,    82,    83,    84,    85,
-      86,    87,    88,    89,    80,    67,    68,    69,    70,    71,
-     106,    72,    73,    74,    75,    67,    68,    69,    70,    71,
-     107,    72,   108,   111,    75,   109,   110,   112,   113,   116,
-     114,   115,   120,   117,   118,   121,   128,   129,   130,   133,
-     139,   142,   143,   146,   150,   145,   147,   151,   144,   154,
-     164,   158,   160,   152,    43,   153,   166,   159,   167,   162,
-     163,   161,   127
+      99,    92,   122,     1,   149,    52,   149,     7,   156,   132,
+     143,    38,    39,     8,    47,    48,   134,    93,   123,    53,
+      30,    31,    94,     3,   144,     4,     5,    16,     9,    17,
+      95,    18,    19,    10,    22,    40,    11,    54,    20,    12,
+      55,    21,    23,   133,    24,    25,    26,    27,    33,    28,
+      34,    29,   124,    96,    56,    36,    37,   157,   125,    57,
+      63,    49,    61,    13,    14,    58,   -41,   126,   150,    97,
+     150,    41,   135,    50,    51,    43,    77,    60,    91,    62,
+      42,   166,    79,   108,   113,    67,    68,    69,    70,    71,
+      43,    72,    73,    74,    75,    67,    68,    69,    70,    71,
+      90,    72,    73,    74,    75,   100,   101,    64,    65,   104,
+     106,    66,    67,    68,    69,    70,    71,   109,    72,    76,
+      81,    82,    83,    84,    85,    86,    87,    88,    89,    80,
+      67,    68,    69,    70,    71,   107,    72,    73,    74,    75,
+      67,    68,    69,    70,    71,   110,    72,   111,   112,    75,
+     114,   115,   116,   117,   118,   120,   121,   130,   129,   131,
+     139,   140,   145,   141,   142,   146,   147,   152,   148,   153,
+     154,   151,   155,   159,   160,   161,   163,   165,    43,   164,
+     162,   167,     0,   128,     0,   168
 };
 
-static const yytype_uint8 yycheck[] =
+static const yytype_int16 yycheck[] =
 {
-      78,     3,    11,    11,    41,    17,     6,    22,    42,    43,
-      17,     4,     7,    23,    26,    58,    15,    19,    13,     0,
-      32,    72,    24,    61,    26,    18,    26,    26,    20,    33,
-      34,    33,    36,    37,    29,    38,     9,    74,    50,    34,
-      25,    53,    37,    21,    59,    40,    73,    31,    72,    55,
-      32,    71,    66,    68,    56,    67,    32,    57,     8,    60,
-      67,    40,    77,    63,    73,    77,    75,    75,     8,    64,
-      65,    38,    44,    26,    72,    77,    73,    26,    14,    26,
-     158,    45,    46,    47,    48,    49,    16,    51,    52,    53,
-      54,    45,    46,    47,    48,    49,    70,    51,    52,    53,
-      54,    26,    68,    55,    56,    26,    58,    45,    46,    47,
-      48,    49,    26,    51,    78,    67,    68,    69,    70,    71,
-      72,    73,    74,    75,    78,    45,    46,    47,    48,    49,
-      26,    51,    52,    53,    54,    45,    46,    47,    48,    49,
-      26,    51,     5,    26,    54,    39,    37,    73,    28,    62,
-      74,    74,    10,    35,    32,    72,    26,    32,    32,    26,
-      26,    26,    26,    32,    73,    26,    26,     4,    30,    18,
-      65,    27,    26,    32,    77,    32,    76,    32,   164,    32,
-      32,   150,   114
+      78,     3,     6,    23,    11,    17,    11,     7,    17,    40,
+       4,    33,    34,    13,    36,    37,    15,    19,    22,    31,
+      41,    42,    24,    57,    18,     0,    72,    60,    28,    37,
+      32,    20,     9,    33,    25,    22,    36,    49,    21,    39,
+      52,    54,    30,    74,    73,    31,    72,    65,    59,    31,
+       8,    70,    56,    55,    66,    39,     8,    66,    62,    71,
+      14,    37,    43,    63,    64,    77,    73,    71,    75,    71,
+      75,    58,    71,    71,    71,    77,    71,    73,    16,    72,
+      67,   159,    67,     5,    27,    44,    45,    46,    47,    48,
+      77,    50,    51,    52,    53,    44,    45,    46,    47,    48,
+      69,    50,    51,    52,    53,    71,    71,    54,    55,    71,
+      71,    58,    44,    45,    46,    47,    48,    36,    50,    78,
+      67,    68,    69,    70,    71,    72,    73,    74,    75,    78,
+      44,    45,    46,    47,    48,    71,    50,    51,    52,    53,
+      44,    45,    46,    47,    48,    71,    50,    38,    73,    53,
+      74,    74,    61,    34,    31,    72,    10,    31,    71,    31,
+      71,    71,    29,    71,    71,    71,    31,     4,    71,    18,
+      31,    73,    31,    26,    31,    71,    31,    64,    77,    31,
+     151,    76,    -1,   114,    -1,   165
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,    23,    80,    58,     0,    72,    81,     7,    13,    29,
-      34,    37,    40,    64,    65,    82,    61,    38,    20,     9,
-      21,    55,    25,    31,    73,    32,    72,    66,    32,    71,
-      42,    43,    83,    60,     8,    85,    40,     8,    83,    83,
-      22,    59,    68,    77,    86,    87,    95,    83,    83,    38,
-      26,    26,    17,    26,    32,    50,    53,    67,    77,    96,
-      73,    44,    72,    14,    96,    96,    96,    45,    46,    47,
-      48,    49,    51,    52,    53,    54,    78,    26,    88,    68,
+       0,    23,    80,    57,     0,    72,    81,     7,    13,    28,
+      33,    36,    39,    63,    64,    82,    60,    37,    20,     9,
+      21,    54,    25,    30,    73,    31,    72,    65,    31,    70,
+      41,    42,    83,    59,     8,    85,    39,     8,    83,    83,
+      22,    58,    67,    77,    86,    87,    95,    83,    83,    37,
+      71,    71,    17,    31,    49,    52,    66,    71,    77,    96,
+      73,    43,    72,    14,    96,    96,    96,    44,    45,    46,
+      47,    48,    50,    51,    52,    53,    78,    71,    88,    67,
       78,    96,    96,    96,    96,    96,    96,    96,    96,    96,
-      70,    16,     3,    19,    24,    26,    33,    56,    89,    95,
-      26,    26,    97,    98,    26,    84,    26,    26,     5,    39,
-      37,    26,    73,    28,    74,    74,    62,    35,    32,    90,
-      10,    72,     6,    26,    57,    63,    99,    98,    26,    32,
-      32,    41,    74,    26,    15,    26,    92,    93,    94,    26,
-       4,    18,    26,    26,    30,    26,    32,    26,    11,    75,
-      73,     4,    32,    32,    18,    17,    67,    91,    27,    32,
-      26,    94,    32,    32,    65,    95,    76,    91
+      69,    16,     3,    19,    24,    32,    55,    71,    89,    95,
+      71,    71,    97,    98,    71,    84,    71,    71,     5,    36,
+      71,    38,    73,    27,    74,    74,    61,    34,    31,    90,
+      72,    10,     6,    22,    56,    62,    71,    99,    98,    71,
+      31,    31,    40,    74,    15,    71,    92,    93,    94,    71,
+      71,    71,    71,     4,    18,    29,    71,    31,    71,    11,
+      75,    73,     4,    18,    31,    31,    17,    66,    91,    26,
+      31,    71,    94,    31,    31,    64,    95,    76,    91
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
@@ -775,7 +775,7 @@ static const yytype_uint8 yyr1[] =
       89,    89,    90,    90,    91,    91,    92,    92,    92,    93,
       93,    94,    94,    94,    95,    96,    96,    96,    96,    96,
       96,    96,    96,    96,    96,    96,    96,    96,    96,    96,
-      96,    97,    97,    98,    99,    99,    99,    99,    99
+      96,    97,    97,    98,    99,    99,    99,    99,    99,    99
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
@@ -787,7 +787,7 @@ static const yytype_uint8 yyr2[] =
        4,     1,     1,     3,     1,     1,     1,     2,     1,     1,
        3,     1,     4,     4,     5,     1,     1,     1,     1,     2,
        2,     3,     3,     3,     3,     3,     3,     3,     3,     3,
-       3,     1,     3,     3,     3,     4,     3,     2,     4
+       3,     1,     3,     3,     3,     4,     1,     3,     2,     4
 };
 
 
@@ -1561,37 +1561,37 @@ yyreduce:
     {
                 //ExecutionState::setLifeCycleModel($4);
            }
-#line 1565 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1565 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 5:
 #line 168 "Prose.y" /* yacc.c:1646  */
     { primArraySize = (yyvsp[0].y_int); }
-#line 1571 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1571 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 6:
 #line 169 "Prose.y" /* yacc.c:1646  */
     { nullReturnValue = (yyvsp[0].y_bool); }
-#line 1577 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1577 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 170 "Prose.y" /* yacc.c:1646  */
     { InitFuncPtrs = (yyvsp[0].y_bool); }
-#line 1583 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1583 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 8:
 #line 171 "Prose.y" /* yacc.c:1646  */
     { loopBound = (yyvsp[0].y_int); }
-#line 1589 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1589 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 172 "Prose.y" /* yacc.c:1646  */
     { ModelFuncWithInlineASM = (yyvsp[0].y_bool); }
-#line 1595 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1595 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 10:
@@ -1609,7 +1609,7 @@ yyreduce:
           std::set<std::string> excp;
           enforceOrigPatternWExceptions[pattern] = excp;
         }
-#line 1613 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1613 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 11:
@@ -1626,61 +1626,61 @@ yyreduce:
              assert(0 && "Pattern defined twice for exceptional cases of inline assembly!\n");
           enforceOrigPatternWExceptions[pattern] = *(yyvsp[0].y_exception_set);
         }
-#line 1630 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1630 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 200 "Prose.y" /* yacc.c:1646  */
     { symbolizeInlineAssembly = (yyvsp[0].y_bool); }
-#line 1636 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1636 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 13:
 #line 201 "Prose.y" /* yacc.c:1646  */
     { SkipSingletonHavocing = (yyvsp[0].y_bool); }
-#line 1642 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1642 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 14:
 #line 205 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_bool) = true; }
-#line 1648 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1648 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 15:
 #line 206 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_bool) = false; }
-#line 1654 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1654 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 16:
 #line 210 "Prose.y" /* yacc.c:1646  */
     { std::string es { (yyvsp[0].y_ident) }; (yyval.y_exception_set) = new std::set<std::string>(); (yyval.y_exception_set)->insert(es); }
-#line 1660 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1660 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 17:
 #line 212 "Prose.y" /* yacc.c:1646  */
     { std::string es { (yyvsp[0].y_ident) }; (yyval.y_exception_set)->insert(es); }
-#line 1666 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1666 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 20:
 #line 222 "Prose.y" /* yacc.c:1646  */
     {}
-#line 1672 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1672 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 21:
 #line 223 "Prose.y" /* yacc.c:1646  */
     { }
-#line 1678 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1678 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 22:
 #line 224 "Prose.y" /* yacc.c:1646  */
     { std::string s((yyvsp[0].y_ident)); lazyInitSingles.insert(s); }
-#line 1684 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1684 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 23:
@@ -1692,19 +1692,19 @@ yyreduce:
         inf.push_back((yyvsp[-3].y_ident));
         inferenceClue[(yyvsp[0].y_ident)] = inf;
 }
-#line 1696 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1696 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 26:
 #line 240 "Prose.y" /* yacc.c:1646  */
     { functionModeledBy[(yyvsp[-3].y_ident)] = (yyvsp[0].y_ident); }
-#line 1702 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1702 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 27:
 #line 241 "Prose.y" /* yacc.c:1646  */
     { APIHandler::addIgnoreHandler((yyvsp[0].y_ident)); }
-#line 1708 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1708 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 28:
@@ -1713,7 +1713,7 @@ yyreduce:
             std::string f((yyvsp[0].y_ident)); 
             havocArgs[f] = *(yyvsp[-2].y_number_list); 
         }
-#line 1717 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1717 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 29:
@@ -1732,7 +1732,7 @@ yyreduce:
           APIAction *a = new APIAction("alloc",par,new AllocAPIHandler()); 
           APIHandler::addAction((yyvsp[-6].y_ident),a);
         }
-#line 1736 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1736 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 30:
@@ -1744,13 +1744,13 @@ yyreduce:
           APIAction *a = new APIAction("free", par, new FreeAPIHandler());
           APIHandler::addAction((yyvsp[-2].y_ident),a);
         }
-#line 1748 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1748 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 31:
 #line 269 "Prose.y" /* yacc.c:1646  */
     { }
-#line 1754 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1754 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 32:
@@ -1760,7 +1760,7 @@ yyreduce:
 		assert((yyvsp[0].y_int) >= 0 && "Negative argument no!\n"); 
 		(yyval.y_number_list)->insert((yyvsp[0].y_int)); 
 	}
-#line 1764 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1764 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 33:
@@ -1769,7 +1769,7 @@ yyreduce:
 		assert((yyvsp[0].y_int) >= 0 && "Negative argument no!\n");
 		(yyvsp[-2].y_number_list)->insert((yyvsp[0].y_int)); 
 	}
-#line 1773 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1773 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 34:
@@ -1777,7 +1777,7 @@ yyreduce:
     {
            (yyval.y_bool) = true;
          }
-#line 1781 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1781 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 35:
@@ -1785,7 +1785,7 @@ yyreduce:
     {
            (yyval.y_bool) = false;
         }
-#line 1789 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1789 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 36:
@@ -1796,19 +1796,19 @@ yyreduce:
                (yyval.y_sequential)->addStep((*(yyvsp[0].y_id_list))[i]);           
             ExecutionState::setLifeCycleModel((yyval.y_sequential)); 
         }
-#line 1800 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1800 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 37:
 #line 300 "Prose.y" /* yacc.c:1646  */
     { std::string ep { (yyvsp[0].y_ident) }; EntryPoint = ep; }
-#line 1806 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1806 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 38:
 #line 301 "Prose.y" /* yacc.c:1646  */
     { std::string ep { (yyvsp[0].y_ident) }; EntryPoint = ep; }
-#line 1812 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1812 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 39:
@@ -1818,13 +1818,13 @@ yyreduce:
            (yyval.y_id_list)->push_back((yyvsp[0].y_id));
            EntryPoint = (yyvsp[0].y_id)->getValue(); 
         }
-#line 1822 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1822 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 40:
 #line 310 "Prose.y" /* yacc.c:1646  */
     { (yyvsp[-2].y_id_list)->push_back((yyvsp[0].y_id)); (yyval.y_id_list) = (yyvsp[-2].y_id_list); }
-#line 1828 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1828 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 41:
@@ -1834,7 +1834,7 @@ yyreduce:
           (yyval.y_id) = new Identifier(fname);
 	  (yyval.y_id)->setSuccessReturnValue(0);
 	}
-#line 1838 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1838 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 42:
@@ -1844,7 +1844,7 @@ yyreduce:
           (yyval.y_id) = new Identifier(fname);
           (yyval.y_id)->setSuccessReturnValue((yyvsp[-1].y_int));
         }
-#line 1848 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1848 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 43:
@@ -1854,7 +1854,7 @@ yyreduce:
           (yyval.y_id) = new Identifier(fname);
           (yyval.y_id)->setSuccessConstraint((yyvsp[0].y_bound));
         }
-#line 1858 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1858 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 44:
@@ -1865,10 +1865,8 @@ yyreduce:
 		(yyval.y_bound) = new BoundAST { (yyvsp[-3].y_ast), bindings };
                 std::string entity = ""; std::string type = ""; std::string comptype = "";
                 for(auto bi : bindings) {
-                   if (entity == "")
+                   if (entity == "" && bi.second.comptype != "funcname")
                       entity = bi.second.entity;
-                   else if (entity != bi.second.entity)
-                     assert(0 && "Multiple data types in the same constraint!\n");
                    if (type == "")
                       type = bi.second.type;
                    else if (type != bi.second.type)
@@ -1892,9 +1890,12 @@ yyreduce:
                    else if (isSimpleEquality(*(yyval.y_bound))) {
                       // equality constraints will be applied first
                       s.insert(s.begin(), *(yyval.y_bound));
+                      std::cerr << "Recorded simple equality for type " << entity << "\n";
                    }
                    else s.push_back(*(yyval.y_bound));
                    fieldConstraintMap[entity] = s;
+                   std::cerr << "Storing a constraint for " << entity << "\n";
+                   (yyval.y_bound)->ast->print();
                 }
                 else if (type == "func") {
                    if (comptype == "return") {
@@ -1927,222 +1928,239 @@ yyreduce:
                 //$$->ast->print();	
                 //std::cerr << "=============\n";
 	}
-#line 1931 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1932 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 403 "Prose.y" /* yacc.c:1646  */
+#line 404 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_ast) = new ConstantNode((yyvsp[0].y_int)); }
-#line 1937 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1938 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 404 "Prose.y" /* yacc.c:1646  */
-    { std::string id((yyvsp[0].y_ident)); (yyval.y_ast) = new IdentifierNode(id); }
-#line 1943 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 405 "Prose.y" /* yacc.c:1646  */
+    { (yyval.y_ast) = new ConstantNode(1); }
+#line 1944 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 405 "Prose.y" /* yacc.c:1646  */
-    { (yyval.y_ast) = new ConstantNode(1); }
-#line 1949 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 406 "Prose.y" /* yacc.c:1646  */
+    { (yyval.y_ast) = new ConstantNode(0); }
+#line 1950 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 406 "Prose.y" /* yacc.c:1646  */
-    { (yyval.y_ast) = new ConstantNode(0); }
-#line 1955 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 407 "Prose.y" /* yacc.c:1646  */
+    { 
+             std::string id((yyvsp[0].y_ident)); 
+             std::cerr << "identifier: " << id << "\n"; 
+             (yyval.y_ast) = new IdentifierNode(id); 
+        }
+#line 1960 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 407 "Prose.y" /* yacc.c:1646  */
+#line 412 "Prose.y" /* yacc.c:1646  */
     { 
           (yyval.y_ast) = new ASTNode(NEG); 
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
         }
-#line 1964 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1969 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 411 "Prose.y" /* yacc.c:1646  */
+#line 416 "Prose.y" /* yacc.c:1646  */
     { 
            (yyval.y_ast) = new ASTNode(MINUS);
            (yyval.y_ast)->addChild((yyvsp[0].y_ast));
         }
-#line 1973 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1978 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 415 "Prose.y" /* yacc.c:1646  */
+#line 420 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(PLUS);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 1983 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1988 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 420 "Prose.y" /* yacc.c:1646  */
+#line 425 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(MINUS);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast)); 
 	}
-#line 1993 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1998 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 425 "Prose.y" /* yacc.c:1646  */
+#line 430 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(TIMES);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2003 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2008 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 430 "Prose.y" /* yacc.c:1646  */
+#line 435 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(LT);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2013 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2018 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 435 "Prose.y" /* yacc.c:1646  */
+#line 440 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(LTE);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2023 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2028 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 440 "Prose.y" /* yacc.c:1646  */
+#line 445 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(GT);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
           std::cerr << "> exp\n";
 	}
-#line 2034 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2039 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 446 "Prose.y" /* yacc.c:1646  */
+#line 451 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(GTE);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2044 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2049 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 451 "Prose.y" /* yacc.c:1646  */
+#line 456 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(EQ);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2054 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2059 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 456 "Prose.y" /* yacc.c:1646  */
+#line 461 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(NEQ);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2064 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2069 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 461 "Prose.y" /* yacc.c:1646  */
+#line 466 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_ast) = (yyvsp[-1].y_ast); }
-#line 2070 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2075 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 467 "Prose.y" /* yacc.c:1646  */
+#line 472 "Prose.y" /* yacc.c:1646  */
     {
 		(yyval.y_bind_map) = new std::map<std::string, Binding> { *(yyvsp[0].y_bind_pair) };
 		delete (yyvsp[0].y_bind_pair);
 	}
-#line 2079 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2084 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 471 "Prose.y" /* yacc.c:1646  */
+#line 476 "Prose.y" /* yacc.c:1646  */
     {
 		(yyval.y_bind_map) = (yyvsp[-2].y_bind_map);
 		(yyval.y_bind_map)->insert(*(yyvsp[0].y_bind_pair));
 		delete (yyvsp[0].y_bind_pair);
 	}
-#line 2089 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2094 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 478 "Prose.y" /* yacc.c:1646  */
+#line 483 "Prose.y" /* yacc.c:1646  */
     {
+                if ((yyvsp[0].y_bind)->type == "type" && (yyvsp[0].y_bind)->comptype == "funcname") {
+                    std::string f((yyvsp[-2].y_ident));
+                    (yyvsp[0].y_bind)->entity = f;
+                    std::cerr << "Recorded " << f << " as a funcname binding\n";
+                }
 		(yyval.y_bind_pair) = new std::pair<std::string, Binding> { (yyvsp[-2].y_ident), *(yyvsp[0].y_bind) };
 		delete (yyvsp[0].y_bind);
 	}
-#line 2098 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2108 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 485 "Prose.y" /* yacc.c:1646  */
+#line 495 "Prose.y" /* yacc.c:1646  */
     {
 		// fieldConstraintMap
 		(yyval.y_bind) = new Binding { "type", "none", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
 	}
-#line 2107 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2117 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 489 "Prose.y" /* yacc.c:1646  */
+#line 499 "Prose.y" /* yacc.c:1646  */
     {
 		// funcArgConstraintMap
 		// entity: either a type or function name
 		(yyval.y_bind) = new Binding { "type", "sizeof", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
 	}
-#line 2117 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2127 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 494 "Prose.y" /* yacc.c:1646  */
+#line 504 "Prose.y" /* yacc.c:1646  */
     {
-		(yyval.y_bind) = new Binding { "func", "none", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
-	}
-#line 2125 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+               (yyval.y_bind) = new Binding { "type", "funcname", "", (unsigned int)0 };
+        }
+#line 2135 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 497 "Prose.y" /* yacc.c:1646  */
+#line 507 "Prose.y" /* yacc.c:1646  */
+    {
+		(yyval.y_bind) = new Binding { "func", "none", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
+	}
+#line 2143 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+    break;
+
+  case 68:
+#line 510 "Prose.y" /* yacc.c:1646  */
     {
                 std::string s((yyvsp[0].y_ident));
 		(yyval.y_bind) = new Binding { "func", "return", s, 0 };
 	}
-#line 2134 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2152 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
-  case 68:
-#line 501 "Prose.y" /* yacc.c:1646  */
+  case 69:
+#line 514 "Prose.y" /* yacc.c:1646  */
     {
       		(yyval.y_bind) = new Binding { "func", "argsize", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
         }
-#line 2142 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2160 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
 
-#line 2146 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2164 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2377,5 +2395,5 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 505 "Prose.y" /* yacc.c:1906  */
+#line 518 "Prose.y" /* yacc.c:1906  */
 

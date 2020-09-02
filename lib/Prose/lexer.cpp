@@ -1,6 +1,6 @@
-#line 2 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/lexer.cpp"
+#line 2 "/home/tuba/Documents/releases/PROMPT/lib/Prose/lexer.cpp"
 
-#line 4 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/lexer.cpp"
+#line 4 "/home/tuba/Documents/releases/PROMPT/lib/Prose/lexer.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -396,8 +396,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 73
-#define YY_END_OF_BUFFER 74
+#define YY_NUM_RULES 72
+#define YY_END_OF_BUFFER 73
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -407,35 +407,35 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[269] =
     {   0,
-        0,    0,   74,   72,    1,    1,   64,   68,   66,   67,
-       72,   70,   59,   63,   61,   69,   69,   69,   69,   69,
-       69,   69,   69,   69,   69,   69,   69,   69,   69,   69,
-       69,   69,   69,   69,    1,   65,   71,   70,   60,   62,
-       69,   69,   69,   69,   69,   69,    9,   69,   69,   69,
-       69,   69,   69,   69,   69,   69,   69,   24,   69,   27,
-       69,   69,   69,   69,   69,   38,   40,   69,   69,   69,
-       69,   69,   54,   69,   69,   69,   69,   69,   71,   69,
-        4,   69,    7,   69,   69,   69,   69,   69,   69,   69,
-       69,   69,   69,   69,   69,   69,   69,   69,   69,   69,
+        0,    0,   73,   71,    1,    1,   63,   67,   65,   66,
+       71,   69,   58,   62,   60,   68,   68,   68,   68,   68,
+       68,   68,   68,   68,   68,   68,   68,   68,   68,   68,
+       68,   68,   68,   68,    1,   64,   70,   69,   59,   61,
+       68,   68,   68,   68,   68,   68,    9,   68,   68,   68,
+       68,   68,   68,   68,   68,   68,   68,   24,   68,   27,
+       68,   68,   68,   68,   68,   37,   39,   68,   68,   68,
+       68,   68,   53,   68,   68,   68,   68,   68,   70,   68,
+        4,   68,    7,   68,   68,   68,   68,   68,   68,   68,
+       68,   68,   68,   68,   68,   68,   68,   68,   68,   68,
 
-       69,   69,   39,   69,   69,   69,   69,   69,   69,   69,
-       69,   69,   69,   69,   69,    3,   69,   69,   69,   69,
-       69,   12,   69,   69,   69,   69,   69,   69,   69,   69,
-       26,   69,   69,   31,   69,   69,   69,   37,   69,   69,
-       69,   48,   51,   69,   55,   53,   69,   69,   58,    2,
-       69,    6,    8,   69,   69,   69,   69,   69,   69,   16,
-       17,   69,   19,   69,   69,   22,   69,   69,   69,   69,
-       69,   34,   69,   69,   69,   69,   69,   69,   56,   57,
-       69,   69,   69,   69,   13,    0,   15,   69,   69,   21,
-       69,   69,   29,   69,   32,   69,   69,   35,   42,   69,
+       68,   68,   38,   68,   68,   68,   68,   68,   68,   68,
+       68,   68,   68,   68,   68,    3,   68,   68,   68,   68,
+       68,   12,   68,   68,   68,   68,   68,   68,   68,   68,
+       26,   68,   68,   30,   68,   68,   68,   36,   68,   68,
+       68,   47,   50,   68,   54,   52,   68,   68,   57,    2,
+       68,    6,    8,   68,   68,   68,   68,   68,   68,   16,
+       17,   68,   19,   68,   68,   22,   68,   68,   68,   68,
+       68,   33,   68,   68,   68,   68,   68,   68,   55,   56,
+       68,   68,   68,   68,   13,    0,   15,   68,   68,   21,
+       68,   68,   28,   68,   31,   68,   68,   34,   41,   68,
 
-       69,   69,   50,   69,    5,   69,   69,   69,    0,   69,
-       69,   69,   69,   69,   69,   36,   69,   69,   69,   49,
-       69,   69,   11,   10,    0,   18,   20,   23,   25,   69,
-       69,   44,   69,   45,   69,   69,   69,    0,   30,   33,
-       69,   46,   52,   69,    0,   43,   47,   69,   14,   69,
-       69,   69,   69,   69,   69,   69,   69,   69,   69,   69,
-       69,   69,   69,   69,   69,   69,   41,    0
+       68,   68,   49,   68,    5,   68,   68,   68,    0,   68,
+       68,   68,   68,   68,   68,   35,   68,   68,   68,   48,
+       68,   68,   11,   10,    0,   18,   20,   23,   25,   68,
+       68,   43,   68,   44,   68,   68,   68,    0,   29,   32,
+       68,   45,   51,   68,    0,   42,   46,   68,   14,   68,
+       68,   68,   68,   68,   68,   68,   68,   68,   68,   68,
+       68,   68,   68,   68,   68,   68,   40,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
@@ -623,12 +623,12 @@ static yyconst flex_int16_t yy_chk[319] =
     } ;
 
 /* Table of booleans, true if rule could match eol. */
-static yyconst flex_int32_t yy_rule_can_match_eol[74] =
+static yyconst flex_int32_t yy_rule_can_match_eol[73] =
     {   0,
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,     };
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,     };
 
 static yy_state_type yy_last_accepting_state;
 static char *yy_last_accepting_cpos;
@@ -661,7 +661,7 @@ void BeginToken(char *t) ;
 void yyerror(char const *s) {
   fprintf (stderr, "%s\n", s);
 }
-#line 665 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/lexer.cpp"
+#line 665 "/home/tuba/Documents/releases/PROMPT/lib/Prose/lexer.cpp"
 
 #define INITIAL 0
 
@@ -880,7 +880,7 @@ YY_DECL
 #line 23 "Prose.l"
 
 
-#line 884 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/lexer.cpp"
+#line 884 "/home/tuba/Documents/releases/PROMPT/lib/Prose/lexer.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1086,216 +1086,208 @@ YY_RULE_SETUP
 case 28:
 YY_RULE_SETUP
 #line 52 "Prose.l"
-{ BeginToken(yytext); return INIT; }
+{ BeginToken(yytext); return INLINE; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 53 "Prose.l"
-{ BeginToken(yytext); return INLINE; }
+{ BeginToken(yytext); return LIFECYCLE; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 54 "Prose.l"
-{ BeginToken(yytext); return LIFECYCLE; }
+{ BeginToken(yytext); return LOOP; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 55 "Prose.l"
-{ BeginToken(yytext); return LOOP; }
+{ BeginToken(yytext); return MEMARG; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 56 "Prose.l"
-{ BeginToken(yytext); return MEMARG; }
+{ BeginToken(yytext); return MEMRETURN; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 57 "Prose.l"
-{ BeginToken(yytext); return MEMRETURN; }
+{ BeginToken(yytext); return MODEL; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 58 "Prose.l"
-{ BeginToken(yytext); return MODEL; }
+{ BeginToken(yytext); return MODELS; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 59 "Prose.l"
-{ BeginToken(yytext); return MODELS; }
+{ BeginToken(yytext); return MODELED; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 60 "Prose.l"
-{ BeginToken(yytext); return MODELED; }
+{ BeginToken(yytext); return NULL_TOKEN; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 61 "Prose.l"
-{ BeginToken(yytext); return NULL_TOKEN; }
+{ BeginToken(yytext); return OF; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 62 "Prose.l"
-{ BeginToken(yytext); return OF; }
+{ BeginToken(yytext); return OFF; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 63 "Prose.l"
-{ BeginToken(yytext); return OFF; }
+{ BeginToken(yytext); return ON; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 64 "Prose.l"
-{ BeginToken(yytext); return ON; }
+{ BeginToken(yytext); return PATTERN; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 65 "Prose.l"
-{ BeginToken(yytext); return PATTERN; }
+{ BeginToken(yytext); return RETURN; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 66 "Prose.l"
-{ BeginToken(yytext); return RETURN; }
+{ BeginToken(yytext); return RETURNONLY; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 67 "Prose.l"
-{ BeginToken(yytext); return RETURNONLY; }
+{ BeginToken(yytext); return RETURNOF; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 68 "Prose.l"
-{ BeginToken(yytext); return RETURNOF; }
+{ BeginToken(yytext); return SETTINGS; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
 #line 69 "Prose.l"
-{ BeginToken(yytext); return SETTINGS; }
+{ BeginToken(yytext); return SINGLETON; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 70 "Prose.l"
-{ BeginToken(yytext); return SINGLETON; }
+{ BeginToken(yytext); return SINGLETONS; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 71 "Prose.l"
-{ BeginToken(yytext); return SINGLETONS; }
+{ BeginToken(yytext); return SIZE; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 72 "Prose.l"
-{ BeginToken(yytext); return SIZE; }
+{ BeginToken(yytext); return SIZEARG; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
 #line 73 "Prose.l"
-{ BeginToken(yytext); return SIZEARG; }
+{ BeginToken(yytext); return SIZEOF; }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
 #line 74 "Prose.l"
-{ BeginToken(yytext); return SIZEOF; }
+{ BeginToken(yytext); return SKIP; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
 #line 75 "Prose.l"
-{ BeginToken(yytext); return SKIP; }
+{ BeginToken(yytext); return SYMBOLIZE; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
 #line 76 "Prose.l"
-{ BeginToken(yytext); return SYMBOLIZE; }
+{ BeginToken(yytext); return TYPE; }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
 #line 77 "Prose.l"
-{ BeginToken(yytext); return TYPE; }
+{ BeginToken(yytext); return TO; }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
 #line 78 "Prose.l"
-{ BeginToken(yytext); return TO; }
+{ BeginToken(yytext); return TRUEVAL; }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
 #line 79 "Prose.l"
-{ BeginToken(yytext); return TRUEVAL; }
+{ BeginToken(yytext); return VALUE; }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
 #line 80 "Prose.l"
-{ BeginToken(yytext); return VALUE; }
+{ BeginToken(yytext); return WHERE; }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
 #line 81 "Prose.l"
-{ BeginToken(yytext); return WHERE; }
+{ BeginToken(yytext); return WITH; }
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
 #line 82 "Prose.l"
-{ BeginToken(yytext); return WITH; }
+{ BeginToken(yytext); return LTS; }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
 #line 83 "Prose.l"
-{ BeginToken(yytext); return LTS; }
+{ BeginToken(yytext); return LEQS; }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
 #line 84 "Prose.l"
-{ BeginToken(yytext); return LEQS; }
+{ BeginToken(yytext); return GTS; }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
 #line 85 "Prose.l"
-{ BeginToken(yytext); return GTS; }
+{ BeginToken(yytext); return GEQS; }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
 #line 86 "Prose.l"
-{ BeginToken(yytext); return GEQS; }
+{ BeginToken(yytext); return EQS; }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
 #line 87 "Prose.l"
-{ BeginToken(yytext); return EQS; }
+{ BeginToken(yytext); return NOTS; }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
 #line 88 "Prose.l"
-{ BeginToken(yytext); return NOTS; }
+{ BeginToken(yytext); return NEQS; }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
 #line 89 "Prose.l"
-{ BeginToken(yytext); return NEQS; }
+{ BeginToken(yytext); return PLUSS; }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
 #line 90 "Prose.l"
-{ BeginToken(yytext); return PLUSS; }
+{ BeginToken(yytext); return MINUSS; }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
 #line 91 "Prose.l"
-{ BeginToken(yytext); return MINUSS; }
+{ BeginToken(yytext); return TIMESS; }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
 #line 92 "Prose.l"
-{ BeginToken(yytext); return TIMESS; }
-	YY_BREAK
-case 69:
-YY_RULE_SETUP
-#line 93 "Prose.l"
 {
     BeginToken(yytext);
-    yylval.y_ident = (char*)malloc(strlen(yytext)+1);
-    strcpy(yylval.y_ident, yytext);
-    //printf("%s\n",yytext);
     std::string s(yytext);
     if (s == "argsize")
        return ARGSIZE;
@@ -1311,32 +1303,39 @@ YY_RULE_SETUP
       return RETURNONLY;
     else if (s == "entry-point")
       return ENTRYPOINT;
-    else return L_IDENT;
-    } 
+    else if (s == "function")
+      return FUNCTION;
+    else {
+       yylval.y_ident = (char*)malloc(strlen(yytext)+1);
+       strcpy(yylval.y_ident, yytext);
+       fprintf(stderr, "identifier %s\n",yytext);
+       return L_IDENT;
+     }
+   } 
+	YY_BREAK
+case 69:
+YY_RULE_SETUP
+#line 118 "Prose.l"
+{ BeginToken(yytext); yylval.y_int=atoi(yytext); return INTEGER; }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 115 "Prose.l"
-{ BeginToken(yytext); yylval.y_int=atoi(yytext); return INTEGER; }
-	YY_BREAK
-case 71:
-YY_RULE_SETUP
-#line 116 "Prose.l"
+#line 119 "Prose.l"
 { /* skip comment */
            BeginToken(yytext); 
          }
 	YY_BREAK
-case 72:
+case 71:
 YY_RULE_SETUP
-#line 119 "Prose.l"
+#line 122 "Prose.l"
 { BeginToken(yytext); return yytext[0]; }
 	YY_BREAK
-case 73:
+case 72:
 YY_RULE_SETUP
-#line 120 "Prose.l"
+#line 123 "Prose.l"
 ECHO;
 	YY_BREAK
-#line 1340 "/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee/lib/Prose/lexer.cpp"
+#line 1339 "/home/tuba/Documents/releases/PROMPT/lib/Prose/lexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2308,4 +2307,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 120 "Prose.l"
+#line 123 "Prose.l"

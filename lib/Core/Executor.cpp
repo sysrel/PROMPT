@@ -1343,7 +1343,7 @@ void applyDataConstraint(ExecutionState &state, TimingSolver *solver, const Memo
            bv[bi].ast->print();
            bool compound = false;
            for(auto bm : bv[bi].bindings) {
-              if (bm.second.comptype != "none") { 
+              if (bm.second.comptype != "none" && bm.second.comptype != "funcname") { 
                  compound = true; 
                  break;
               }
@@ -1389,11 +1389,13 @@ void applyDataConstraint(ExecutionState &state, TimingSolver *solver, const Memo
 void applyDataConstraintToArray(ExecutionState &state, TimingSolver *solver, 
       const MemoryObject *mo, ObjectState *obj, unsigned baseOffset, 
                     unsigned count, bool equality) {
+    StructType *st = dyn_cast<StructType>(mo->baseType);
+    if (!st) return;
     DataLayout *targetData = kmoduleExt->targetData;
     for(unsigned i = 0; i<count; i++) {
-       unsigned newbaseOffset = i * targetData->getTypeAllocSize(mo->baseType);
        llvm::errs() << "Applying data constraint to array cell " << i 
                     << " for type " << getTypeName(mo->baseType) << "\n";
+       unsigned newbaseOffset = i * targetData->getTypeAllocSize(mo->baseType);
        applyDataConstraint(state, solver, mo, mo->baseType, obj, newbaseOffset, equality);
     }
 }
@@ -1473,7 +1475,10 @@ void applySizeOfConstraint(ExecutionState &state, TimingSolver *solver,
      assert(dyn_cast<klee::ConstantExpr>(emo->getBaseExpr()) && 
                    "Expected base expression of memobject to be  aconstant!\n");
      unsigned emobase = dyn_cast<klee::ConstantExpr>(emo->getBaseExpr())->getZExtValue();
-     assert(baseoffset != -1 && "Could not find the embedded type inside the memory object!\n");
+     if (baseoffset == -1) {
+        llvm::errs() <<  "Could not find the embedded type inside the memory object, using enclosing type base address!\n";
+        baseoffset = emobase;
+     }
      StructType *est = dyn_cast<StructType>(et);        
      if (est) {
         const StructLayout *esl = targetData->getStructLayout(est);
@@ -1485,7 +1490,7 @@ void applySizeOfConstraint(ExecutionState &state, TimingSolver *solver,
            for(unsigned bi = 0; bi<bv.size(); bi++) {
               bool compound = false;
               for(auto bm : bv[bi].bindings) {
-                 if (bm.second.comptype != "none") { 
+                 if (bm.second.comptype != "none" && bm.second.comptype != "funcname") { 
                     compound = true; 
                     break;
                  }
@@ -1644,6 +1649,8 @@ void applyCommandlineSpecInitializations(ExecutionState &state, TimingSolver *so
 
 void applyCommandlineSpecInitializationsToArray(ExecutionState &state, TimingSolver *solver, 
    const MemoryObject *mo, ObjectState *obj, llvm::Type *t, unsigned count) {
+   StructType *st = dyn_cast<StructType>(mo->baseType);
+   if (!st) return;
    DataLayout *targetData = kmoduleExt->targetData;
    for(unsigned i = 0; i<count; i++) {
        unsigned newbaseOffset = i * targetData->getTypeAllocSize(mo->baseType);

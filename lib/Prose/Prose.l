@@ -49,7 +49,6 @@ ID       [_a-zA-Z][_a-zA-Z0-9]*
 "initzero" { BeginToken(yytext); return INITZERO; } 
 "init" { BeginToken(yytext); return INIT; }
 "is" { BeginToken(yytext); return IS; }
-"init" { BeginToken(yytext); return INIT; }
 "inline" { BeginToken(yytext); return INLINE; }
 "lifecycle" { BeginToken(yytext); return LIFECYCLE; }
 "loop" { BeginToken(yytext); return LOOP; }
@@ -92,9 +91,6 @@ ID       [_a-zA-Z][_a-zA-Z0-9]*
 "*" { BeginToken(yytext); return TIMESS; }
 {ID} {
     BeginToken(yytext);
-    yylval.y_ident = (char*)malloc(strlen(yytext)+1);
-    strcpy(yylval.y_ident, yytext);
-    //printf("%s\n",yytext);
     std::string s(yytext);
     if (s == "argsize")
        return ARGSIZE;
@@ -110,8 +106,15 @@ ID       [_a-zA-Z][_a-zA-Z0-9]*
       return RETURNONLY;
     else if (s == "entry-point")
       return ENTRYPOINT;
-    else return L_IDENT;
-    } 
+    else if (s == "function")
+      return FUNCTION;
+    else {
+       yylval.y_ident = (char*)malloc(strlen(yytext)+1);
+       strcpy(yylval.y_ident, yytext);
+       fprintf(stderr, "identifier %s\n",yytext);
+       return L_IDENT;
+     }
+   } 
 [0-9]+ { BeginToken(yytext); yylval.y_int=atoi(yytext); return INTEGER; }
 "//".* { /* skip comment */
            BeginToken(yytext); 
