@@ -1,0 +1,4 @@
+1
+assert,no,9
+ptr,no,10
+ptr,yes,11

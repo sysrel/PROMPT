@@ -54,6 +54,7 @@ extern std::map<std::string, std::vector<std::string> > inferenceClue;
 %token CONTINUE
 %token CONSTANT
 %token DATA
+%token DESTARG
 %token EMBEDS
 %token ENTRYPOINT
 %token EXCEPT
@@ -258,6 +259,26 @@ function_model:
           par.push_back("true"); // returns the pointer to the allocated mem 
           APIAction *a = new APIAction("alloc",par,new AllocAPIHandler()); 
           APIHandler::addAction($2,a);
+        }
+        | ALLOC L_IDENT INITZERO boolean SYMBOLIZE 
+                boolean MEMRETURN boolean DESTARG INTEGER
+        {
+          std::vector<std::string> par;
+          par.push_back($2);
+          par.push_back("-1");
+          if ($4)
+             par.push_back("true");
+          else par.push_back("false");
+          if ($6)
+             par.push_back("true");
+          else par.push_back("false");
+          if ($8)
+             par.push_back("true");
+          else par.push_back("false");
+          par.push_back(std::to_string($10));
+          APIAction *a = new APIAction("alloc",par,new AllocAPIHandler());
+          APIHandler::addAction($2,a);
+          
         }
         | FREE L_IDENT MEMARG INTEGER { 
           std::vector<std::string> par;

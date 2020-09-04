@@ -1,0 +1,12 @@
+global settings:
+
+data models:
+
+function models:
+
+ alloc bar initzero false symbolize false memreturn true destarg 3;
+
+lifecycle model:
+
+entry-point foo
+

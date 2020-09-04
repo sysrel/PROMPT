@@ -6379,6 +6379,7 @@ int getTypeBaseInObject(const MemoryObject *mo, Type *qt,
                      return bottom;
                   else  {
                      tst = est;
+                     sl = dl->getStructLayout(tst);
                      newst = true;
                      relbase = relbase + sl->getElementOffset(i);
                      break;

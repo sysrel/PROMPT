@@ -1,5 +1,5 @@
 
-Example about Function models, returnonly f2
+Example about Function models, alloc with size provided in an argument
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt

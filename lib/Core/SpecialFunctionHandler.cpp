@@ -1522,28 +1522,31 @@ bool AllocAPIHandler::interpret(PMFrame &pmf, APIAction *action, ExecutionState 
     if (!ci)
        assert(false && "Expected a call instruction for allocation API!\n");
     int param = std::stoi(par[1]); 
-    llvm::errs() << "size=" << arguments[param] << " vs " << ConstantExpr::create(0,32) << "\n"; 
-    if (arguments[param] == ConstantExpr::create(0,32)) {
-       llvm::errs() << "Skipping 0 size alloc API: \n"; action->print(); 
-       return true;
-    }
     bool sym = (par[3] == "true");
     bool retAssign = (par[4] == "true");
     size_t allocationAlignment;
     size_t allocationSize;
     const DataLayout &dl = target->inst->getParent()->getParent()->getParent()->getDataLayout();
-    Type *t = ci->getArgOperand(param)->getType();
-    if (t->isPointerTy()) {
-       t = t->getPointerElementType();
+    int storeparam = -1;
+    Type *t = NULL;
+    if (param < 0) {
+       storeparam = std::stoi(par[5]);
+       t = ci->getArgOperand(storeparam)->getType();
        if (t->isPointerTy()) {
           t = t->getPointerElementType();
-          allocationAlignment = dl.getPrefTypeAlignment(t);
-          allocationSize = dl.getTypeAllocSize(t);
+          if (t->isPointerTy()) {
+             t = t->getPointerElementType();
+             allocationAlignment = dl.getPrefTypeAlignment(t);
+             allocationSize = dl.getTypeAllocSize(t);
+          }
+          else assert(false && "Alloc API param type must be a double-pointer!\n");
        }
-       else assert(false && "Alloc API param type must be a double-pointer!\n");
     }
     else {
        //const llvm::Value *allocSite = state.prevPC->inst;
+       t = target->inst->getType();
+       if (t->isPointerTy())
+          t = t->getPointerElementType();
        const llvm::Value *allocSite = target->inst;
        allocationAlignment = ((Executor*)(theInterpreter))->getAllocationAlignment(allocSite);
        ConstantExpr *constexp = dyn_cast<ConstantExpr>(arguments[param]);
@@ -1568,6 +1571,10 @@ bool AllocAPIHandler::interpret(PMFrame &pmf, APIAction *action, ExecutionState 
            }
       }
     }
+    if (allocationSize == 0) {
+       llvm::errs() << "Skipping 0 size alloc API: \n"; action->print(); 
+       return true;
+    }
     MemoryObject *mo = ((Executor*)(theInterpreter))->memory->allocate(allocationSize, false, false,
                          ci, allocationAlignment, allocationSize, Type::getInt8Ty(ctx));
     if (!mo) {
@@ -1575,9 +1582,10 @@ bool AllocAPIHandler::interpret(PMFrame &pmf, APIAction *action, ExecutionState 
        return false;
     }
     recordMemObj(state, mo);
-    llvm::outs() << "Allocated memory object at " << mo->getBaseExpr() << " to handle alloc API " << fname << "\n"; 
+    llvm::errs() << "Allocated memory object at " << mo->getBaseExpr() << " to handle alloc API " << fname << "\n"; 
+    llvm::errs() << "size=" << allocationSize << "\n"; 
     state.recordAlloc(mo->getBaseExpr());
-    if (par.size() > 5) {  
+    if (par.size() > 6) {  
        state.addSymbolDef(par[5], mo->getBaseExpr());
        state.addSymbolType(par[5], t);
     } 
@@ -1601,18 +1609,22 @@ bool AllocAPIHandler::interpret(PMFrame &pmf, APIAction *action, ExecutionState 
        }
     }   
      
+    if (storeparam >= 0) {
+       llvm::errs() << "Writing alloc address to the dest arg\n";
+       abort = ((Executor*)(theInterpreter))->executeMemoryOperation(state, true, 
+                                                arguments[storeparam], mo->getBaseExpr(), 0);
+       if (abort) return false;
+    }
+
  
     if (sym) {
         mo->name = state.getUnique(fname) + "_" + std::to_string(param);
 
        if (tid == -1) {
           ((Executor*)(theInterpreter))->executeMakeSymbolic(state, mo, mo->name, true, t, true);
-          abort = ((Executor*)(theInterpreter))->executeMemoryOperation(state, true, arguments[param], mo->getBaseExpr(), 0);
-          if (abort) return false;
        } 
        else {
           ((Executor*)(theInterpreter))->executeMakeSymbolicThread(state, mo, mo->name, tid); 
-          ((Executor*)(theInterpreter))->executeMemoryOperationThread(state, true, arguments[param], mo->getBaseExpr(), 0, tid); 
        }
     }
     else { 
@@ -1622,6 +1634,7 @@ bool AllocAPIHandler::interpret(PMFrame &pmf, APIAction *action, ExecutionState 
     }
 
     if (retAssign) {
+       llvm::errs() << "Returning alloc address\n";
        ((Executor*)(theInterpreter))->bindLocal(target, state, mo->getBaseExpr());
     }
 

@@ -34,6 +34,7 @@ ID       [_a-zA-Z][_a-zA-Z0-9]*
 "continue" { BeginToken(yytext); return CONTINUE; }
 "constant" { BeginToken(yytext); return CONSTANT; }
 "data" { BeginToken(yytext); return DATA; }
+"destarg" { BeginToken(yytext); return DESTARG; }
 "embeds" { BeginToken(yytext); return EMBEDS; }
 "entry-point" { BeginToken(yytext); return ENTRYPOINT; }
 "except" { BeginToken(yytext); return EXCEPT; }
@@ -94,6 +95,8 @@ ID       [_a-zA-Z][_a-zA-Z0-9]*
     std::string s(yytext);
     if (s == "argsize")
        return ARGSIZE;
+    else if (s == "initzero")
+       return INITZERO;
     else if (s == "returnof")
        return RETURNOF;
     else if (s == "alloc")

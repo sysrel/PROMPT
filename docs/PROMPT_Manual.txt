@@ -152,9 +152,13 @@ which can be specified using the ``returnonly <ident>''.
 An important class of API functions involve memory allocation and deallocation. Such API can 
 be modeled in PROSE to abstract away framework specific details. An allocation function may 
 either return a pointer to the allocated memory or store the address in a pointer argument. 
-Users can use the ``alloc <ident> size_arg <number> init_zero <bool> symbolize <bool>'' the 
-argument index (<number>) that specifies the size of the memory allocation, whether the 
-allocated memory would be initialized with zeros, and whether the memory would be symbolized. 
+Users can use the ``alloc <ident> size_arg <number> init_zero <bool> symbolize <bool>'' rule, 
+where the argument index (<number>) specifies the size of the memory allocation, whether 
+the allocated memory would be initialized with zeros, and whether the memory would be 
+symbolized. Some allocation functions return the address of the allocated memory through a 
+pointer argument. In such cases, the users can use the `` alloc <ident> initzero <bool> 
+symbolize <bool> memreturn <bool> destarg <number>'' rule, where  <number> denote the 
+argument number that stores the address of the allocation function upon return.
 To model a deallocation function, one needs to specify the argument that holds the address of 
 the memory region to be deallocated using the ``free <ident> memarg <number>' rule, where 
 <number> denotes the argument index.
