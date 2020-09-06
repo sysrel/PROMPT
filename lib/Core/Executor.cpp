@@ -6369,8 +6369,8 @@ int getTypeBaseInObject(const MemoryObject *mo, Type *qt,
             Type *et = tst->getElementType(i);
             unsigned bottom = relbase + sl->getElementOffset(i);
             unsigned top = relbase + sl->getElementOffset(i) + dl->getTypeAllocSize(et);
-            llvm::errs() << "checking " << addressClue << " inside type region " 
-                         << getTypeName(et) << " bw [" << bottom << "," << top << "]\n";
+            //llvm::errs() << "checking " << addressClue << " inside type region " 
+              //           << getTypeName(et) << " bw [" << bottom << "," << top << "]\n";
                           
             if (bottom <= addressClue && addressClue < top) { 
                StructType *est = dyn_cast<StructType>(et);
@@ -6378,10 +6378,10 @@ int getTypeBaseInObject(const MemoryObject *mo, Type *qt,
                   if (est == qt)
                      return bottom;
                   else  {
+                     relbase = relbase + sl->getElementOffset(i);
                      tst = est;
                      sl = dl->getStructLayout(tst);
                      newst = true;
-                     relbase = relbase + sl->getElementOffset(i);
                      break;
                   }
                }

@@ -1,0 +1,74 @@
+global settings:
+ 
+ model funcs with asm off;
+
+data models:
+
+ type usb_device embeds type device;
+
+ singleton usb_interface;
+ singleton usb_device;
+ singleton snd_usb_audio;
+ singleton snd_device;
+ singleton snd_rawmidi;
+ singleton snd_pcm;
+ singleton snd_card;
+ singleton ua101;
+
+function models:
+
+ alloc usb_alloc_coherent sizearg 1 initzero true symbolize false; 
+ alloc __kmalloc sizearg 0 initzero true symbolize false; 
+ free kfree memarg 0;
+
+
+ returnonly dev_err;
+ returnonly _dev_info;  
+ returnonly dev_notice;
+ returnonly dev_warn;
+ returnonly mutex_lock;
+ returnonly mutex_unlock;
+ returnonly __mutex_init;
+ returnonly strlcpy;
+ returnonly strim;
+ returnonly strlcat;
+ returnonly atomic_dec;
+ returnonly atomic_inc;
+ returnonly atomic_add_return;
+ returnonly variable_test_bit;
+ returnonly set_bit;
+ returnonly clear_bit;
+ returnonly snd_card_register;
+ returnonly snd_usb_create_quirk;
+ returnonly usb_ifnum_to_if;
+ returnonly snd_usb_find_csint_desc;
+ returnonly snd_usb_create_mixer;
+ returnonly snd_usb_apply_boot_quirk;
+ returnonly snd_component_add;
+ returnonly usb_string;
+ returnonly snd_usb_audio_create_proc;
+ returnonly snd_card_disconnect;
+ returnonly refcount_inc;
+
+
+ snd_card_new modeled by snd_card_new_PROSE;
+ __snd_device_register modeled by __snd_device_register_PROSE;
+ snd_device_register_all modeled by snd_device_register_all_PROSE;  
+ snd_card_register modeled by snd_card_register_PROSE;
+ __snd_device_disconnect modeled by __snd_device_disconnect_PROSE; 
+ snd_device_disconnect_all modeled by snd_device_disconnect_all_PROSE;
+ snd_card_disconnect modeled by snd_card_disconnect_PROSE;
+ snd_device_free_all modeled by snd_device_free_all_PROSE;
+ snd_card_free_when_closed modeled by snd_card_free_when_closed_PROSE;
+ snd_card_free modeled by snd_card_free_PROSE; 
+ snd_device_new modeled by snd_device_new_PROSE;
+ snd_rawmidi_new modeled by snd_rawmidi_new_PROSE;
+ snd_rawmidi_free modeled by snd_rawmidi_free_PROSE;
+ snd_pcm_new modeled by snd_pcm_new_PROSE;
+ dev_free modeled by dev_free_PROSE;
+ dev_register modeled by dev_register_PROSE;
+ dev_disconnect modeled by dev_disconnect_PROSE;
+
+lifecycle model:
+
+ ua101_probe[0] ; ua101_disconnect

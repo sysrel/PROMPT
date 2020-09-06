@@ -1,0 +1,1 @@
+/home/tuba/Documents/tools/klee-3.8/klee_build_dir/bin/klee -entry-point=usbtv_probe -prog-model-spec=pmfull.txt -life-cycle-conf=lcmprobe.txt -lazy-init=true  -link-llvm-lib=../../../../../../kernelbitcode/kernel_v4_11_rc2.bc usbtv.bc  

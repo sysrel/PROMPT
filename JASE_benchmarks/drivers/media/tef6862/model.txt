@@ -1,0 +1,55 @@
+global settings:
+ 
+ model funcs with asm off;
+
+data models:
+
+ type i2c_client embeds type device;
+
+
+ singleton vb2_queue;
+ singleton v4l2_device;
+ singleton i2c_client;
+ singleton i2c_device_id;
+ singleton tef6862_state;
+
+function models:
+
+ alloc usb_alloc_coherent sizearg 1 initzero true symbolize false; 
+ alloc snd_card_new initzero true symbolize true memreturn false destarg 5;
+ alloc snd_pcm_new initzero true symbolize true memreturn false destarg 5;
+ alloc __kmalloc sizearg 0 initzero true symbolize false; 
+ free kfree memarg 0;
+
+ returnonly dev_err;
+ returnonly _dev_info;  
+ returnonly dev_notice;
+ returnonly dev_warn;
+ returnonly mutex_lock;
+ returnonly mutex_unlock;
+ returnonly __mutex_init;
+ returnonly strlcpy;
+ returnonly strcmp;
+ returnonly strncmp;
+ returnonly i2c_check_functionality;
+ returnonly i2c_master_send;
+ returnonly snd_card_register;
+ returnonly snd_card_free;
+ returnonly refcount_inc;
+ returnonly v4l2_device_unregister_subdev;
+
+ __video_register_device modeled by __video_register_device_PROSE;
+ video_unregister_device modeled by video_unregister_device_PROSE;
+ v4l2_device_register modeled by v4l2_device_register_PROSE; 
+ v4l2_device_unregister modeled by v4l2_device_unregister_PROSE;
+ v4l2_device_disconnect modeled by v4l2_device_disconnect_PROSE;
+ v4l2_device_put modeled by v4l2_device_put_PROSE;
+ v4l2_device_get modeled by v4l2_device_get_PROSE;
+ atomic_add_return modeled by atomic_add_return_PROSE;
+ atomic_dec modeled by atomic_dec_PROSE;
+ atomic_inc modeled by atomic_inc_PROSE; 
+ v4l2_i2c_subdev_init modeled by v4l2_i2c_subdev_init_PROSE;
+ 
+lifecycle model:
+
+ tef6862_probe[0] ; tef6862_remove

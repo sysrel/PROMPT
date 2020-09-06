@@ -1,0 +1,12 @@
+global settings:
+
+data models:
+
+  type A embeds type B;
+
+function models:
+
+lifecycle model:
+
+  entry-point foo
+

@@ -1,0 +1,52 @@
+global settings:
+ 
+ model funcs with asm off;
+
+data models:
+
+ type usb_device embeds type device;
+ type r8152 embeds type napi_struct;
+
+ singleton usb_interface;
+ singleton usb_device;
+ singleton r8152;
+ singleton net_device;
+
+function models:
+
+ alloc usb_alloc_coherent sizearg 1 initzero true symbolize false;
+ alloc dma_zalloc_coherent sizearg 1 initzero true symbolize false;
+ alloc devm_kzalloc sizearg 1 initzero true symbolize false;
+ alloc devm_kmalloc sizearg 1 initzero true symbolize false;
+ alloc __kmalloc sizearg 0 initzero true symbolize false; 
+ alloc vzalloc sizearg 0 initzero true symbolize false; 
+ free kfree memarg 0;
+ free vfree memarg 0;
+
+ returnonly dev_err;
+ returnonly _dev_info;  
+ returnonly dev_notice;
+ returnonly dev_warn;
+ returnonly mutex_lock;
+ returnonly mutex_unlock;
+ returnonly __mutex_init;
+ returnonly strlcpy;
+ returnonly strcpy;
+ returnonly memcpy;
+ returnonly refcount_inc;
+ returnonly netif_device_attach;
+ returnonly usbnet_update_max_qlen;
+ returnonly set_bit;
+ returnonly schedule_work;
+ returnonly usb_set_interface;
+ returnonly netdev_info;
+ returnonly netif_carrier_off;
+ returnonly netdev_err;
+ returnonly pm_runtime_enable;
+ returnonly usb_fill_control_urb;
+ returnonly usb_fill_bulk_urb;
+ returnonly usb_fill_int_urb;
+
+lifecycle model:
+
+ rtl8152_probe[0] ; rtl8152_disconnect

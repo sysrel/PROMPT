@@ -1,0 +1,1 @@
+/home/tuba/Documents/tools/PROMPT/pmguidedsymex/klee_build_dir/bin/klee -entry-point=usbtv_probe -prog-model-spec=pm.txt  -life-cycle-conf=lcm.txt -lazy-init=true -lazy-single-ins=singles.txt  -infer-clue-spec=infclue.txt -link-llvm-lib=video_model.bc -max-time=500 -watchdog usbtv.bc 

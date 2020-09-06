@@ -709,6 +709,8 @@ unsigned getWidth(BoundAST &bast,ASTNode *n,const StructType *st) {
      IdentifierNode *in = (IdentifierNode*)n;
      Binding b = bast.bindings[in->value];
      Type *et = st->getStructElementType(b.index);
+     if (et->isPointerTy())
+        return 64;
      return et->getPrimitiveSizeInBits();
   }
   unsigned maxw = 0;

@@ -1,0 +1,34 @@
+global settings:
+
+   model funcs with asm on but_use_original_with_pattern l2cap;
+   model funcs with asm on but_use_original_with_pattern hci;
+   model funcs with asm on but_use_original_with_pattern set;
+  
+   symbolize inline asm on;
+
+   init funcptrs to null on;
+
+data models:
+
+
+function models:
+
+ alloc usb_alloc_coherent sizearg 1 initzero true symbolize false;
+ alloc __kmalloc sizearg 0 initzero true symbolize false; 
+ alloc vzalloc sizearg 0 initzero true symbolize false; 
+ free kfree memarg 0;
+ free vfree memarg 0;
+
+ returnonly mcount;
+ returnonly skb_clone;
+ returnonly kfree_skb;
+ returnonly hci_dev_test_flag;
+ returnonly hci_inquiry_cache_update;
+ returnonly eir_get_length;
+ returnonly mgmt_device_found;
+
+lifecycle model:
+
+ entry-point hci_extended_inquiry_result_evt
+
+

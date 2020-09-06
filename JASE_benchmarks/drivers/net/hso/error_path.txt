@@ -1,0 +1,12 @@
+Error: memory error: out of bound pointer
+Stack: 
+	#000012011 in free_netdev_PROSE (dev=55308000)
+	#100003496 in hso_free_net_device (hso_dev=50571312)
+	#200002103 in hso_create_net_device (interface=49654272, port_spec)
+	#300001272 in hso_probe (interface=49654272, id=45863040)
+Info: 
+	address: 55309168
+	next: object at 55342912 of size 4
+		MO8167[4] allocated at hso_free_net_device():  %2 = alloca i32
+	prev: object at 54814016 of size 200
+		MO4638[200] allocated at kmalloc.72():  %5 = call noalias i8* @__kmalloc(i64 %3, i32 %4) #11

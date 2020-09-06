@@ -1,0 +1,55 @@
+global settings:
+
+   array size 128;
+
+   model funcs with asm off;
+  
+   symbolize inline asm on;
+
+data models:
+
+ type l2cap_chan embeds type list_head;
+
+ (x = l2cap_sock_state_change_cb) where l2cap_sock_state_change_cb is function,
+        x is l2cap_ops field 5;
+
+ (x = l2cap_sock_ready_cb) where l2cap_sock_ready_cb is function, 
+        x is l2cap_ops field 6;
+
+ (x = l2cap_sock_suspend_cb) where l2cap_sock_suspend_cb is function,
+        x is l2cap_ops field 9;
+
+function models:
+
+ alloc usb_alloc_coherent sizearg 1 initzero true symbolize false;
+ alloc __kmalloc sizearg 0 initzero true symbolize false; 
+ alloc vzalloc sizearg 0 initzero true symbolize false; 
+ free kfree memarg 0;
+ free vfree memarg 0;
+
+ returnonly mcount;
+ returnonly skb_clone;
+ returnonly kfree_skb;
+ returnonly l2cap_send_cmd;
+ returnonly hci_send_cmd;
+ returnonly l2cap_clear_timer;
+ returnonly l2cap_send_disconn_req;
+ returnonly l2cap_sock_state_change_cb;
+ returnonly l2cap_sock_ready_cb;
+ returnonly l2cap_sock_suspend_cb;
+ returnonly amp_create_logical_link;
+ returnonly l2cap_chan_set_err;
+ returnonly l2cap_seq_list_init;
+ returnonly l2cap_conf_rfc_get;
+ returnonly l2cap_ertm_init;
+ returnonly l2cap_get_ident;
+ returnonly l2cap_set_timer;
+ returnonly set_default_fcs;
+ returnonly l2cap_chan_ready;
+ returnonly l2cap_get_chan_by_scid;
+
+lifecycle model:
+
+ entry-point l2cap_config_rsp
+
+

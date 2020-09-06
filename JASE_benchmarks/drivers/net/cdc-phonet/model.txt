@@ -1,0 +1,69 @@
+global settings:
+ 
+ model funcs with asm off;
+
+data models:
+
+ type usb_device embeds type device;
+
+ singleton usb_interface;
+ singleton usb_device;
+ singleton net_device;
+ singleton usbpn_dev;
+
+function models:
+
+ alloc usb_alloc_coherent sizearg 1 initzero true symbolize false;
+ alloc dma_zalloc_coherent sizearg 1 initzero true symbolize false;
+ alloc devm_kzalloc sizearg 1 initzero true symbolize false;
+ alloc devm_kmalloc sizearg 1 initzero true symbolize false;
+ alloc __kmalloc sizearg 0 initzero true symbolize false; 
+ alloc vzalloc sizearg 0 initzero true symbolize false; 
+ free kfree memarg 0;
+ free vfree memarg 0;
+
+ returnonly dev_err;
+ returnonly _dev_info;  
+ returnonly dev_notice;
+ returnonly dev_warn;
+ returnonly mutex_lock;
+ returnonly mutex_unlock;
+ returnonly __mutex_init;
+ returnonly strlcpy;
+ returnonly strcpy;
+ returnonly memcpy;
+ returnonly refcount_inc;
+ returnonly netif_device_attach;
+ returnonly usbnet_update_max_qlen;
+ returnonly set_bit;
+ returnonly schedule_work;
+ returnonly usb_set_interface;
+ returnonly netdev_info;
+ returnonly netif_carrier_off;
+ returnonly netdev_err;
+ returnonly pm_runtime_enable;
+ returnonly init_timer_key;
+ returnonly crc32_le;
+ returnonly usb_control_msg;
+ returnonly usb_fill_control_urb;
+ returnonly usb_fill_bulk_urb;
+ returnonly usb_fill_int_urb;
+ returnonly catc_multicast;
+
+ alloc_netdev_mqs modeled by alloc_netdev_mqs_PROSE;
+ alloc_etherdev_mqs modeled by alloc_etherdev_mqs_PROSE;  
+ netdev_priv modeled by netdev_priv_PROSE; 
+ register_netdevice modeled by register_netdevice_PROSE;
+ register_netdev modeled by register_netdev_PROSE;
+ rollback_registered_many modeled by rollback_registered_many_PROSE;
+ rollback_registered modeled by rollback_registered_PROSE;
+ netdev_freemem modeled by netdev_freemem_PROSE;
+ free_netdev modeled by free_netdev_PROSE;
+ net_set_todo modeled by net_set_todo_PROSE; 
+ netdev_run_todo modeled by netdev_run_todo_PROSE;
+ unregister_netdev modeled by unregister_netdev_PROSE;
+ __alloc_percpu_gfp modeled by __alloc_percpu_gfp_PROSE;
+
+lifecycle model:
+
+ usbpn_probe[0] ; usbpn_disconnect

@@ -227,10 +227,13 @@ data_model:
 
 type_embedding:	TYPE L_IDENT EMBEDS TYPE L_IDENT {
 	std::vector<std::string> inf;
-	if (inferenceClue.find($5) != inferenceClue.end())
-             inf = inferenceClue[$5];
-        inf.push_back($2);
-        inferenceClue[$5] = inf;
+        std::string embedding($2), embedded($5);
+        embedding = "%struct." + embedding;
+        embedded = "%struct." + embedded;  
+	if (inferenceClue.find(embedded) != inferenceClue.end())
+             inf = inferenceClue[embedded];
+        inf.push_back(embedding);
+        inferenceClue[embedded] = inf;
 };
 
 function_models:

@@ -22,6 +22,10 @@ global settings:
 
 data models:
 
+ // type <ident_1> embeds type <ident_2>;
+
+ // singleton <ident>;
+
  // (<expression>) where <var_1> is argsize <funcname> arg <number_1> 
  //                            [, <var_2> is arg <funcname> arg <number_2>, ..]; 
 
