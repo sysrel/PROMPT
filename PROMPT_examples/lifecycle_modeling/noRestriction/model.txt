@@ -8,4 +8,4 @@ function models:
 
 lifecycle model:
 
-  foo continue if (true) where x is returnof foo ; bar
+  foo ; bar

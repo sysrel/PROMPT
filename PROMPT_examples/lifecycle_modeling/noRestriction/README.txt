@@ -1,5 +1,5 @@
 
-Example about Life-cycle, sequence, return value constraint
+Example about Life-cycle, sequential execution without any constraints on the return value
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt
@@ -18,7 +18,7 @@ function models:
 
 lifecycle model:
 
-  foo continue if (true) where x is returnof foo ; bar
+  foo ; bar
 
 Code
 ======

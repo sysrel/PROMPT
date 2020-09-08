@@ -1,5 +1,5 @@
 
-Example about Global Settings, null return CHOICE
+Example about Global Settings, modeling functions with inline assembly
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt

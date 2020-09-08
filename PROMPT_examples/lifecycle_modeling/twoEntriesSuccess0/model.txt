@@ -8,4 +8,4 @@ function models:
 
 lifecycle model:
 
-  foo ; bar
+  foo[0] ; bar

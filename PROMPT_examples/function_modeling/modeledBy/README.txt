@@ -1,5 +1,5 @@
 
-Example about Function models, f1 modeled by f2
+Example about Function models, specifying modeling of one function by another function.
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt

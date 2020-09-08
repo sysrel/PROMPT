@@ -338,7 +338,16 @@ lifecycle_entry:
 	L_IDENT {
           std::string fname { $L_IDENT };
           $$ = new Identifier(fname);
-	  $$->setSuccessReturnValue(0);
+          ASTNode * n = new ConstantNode(1);
+          Binding b;
+          b.type = "func";
+          b.comptype = "return";
+          b.entity = fname;
+          b.index = -1;
+          BoundAST *bast = new BoundAST;
+          bast->ast = n;
+          bast->bindings[fname] = b; 
+	  $$->setSuccessConstraint(bast);
 	}
 	| L_IDENT '[' INTEGER ']' {
           std::string fname { $L_IDENT };

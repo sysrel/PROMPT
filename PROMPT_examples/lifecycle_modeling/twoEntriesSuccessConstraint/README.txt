@@ -1,5 +1,5 @@
 
-Example about Life-cycle, sequence, return value constraint
+Example about Life-cycle, sequential execution with a return value constraint for the first function
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt

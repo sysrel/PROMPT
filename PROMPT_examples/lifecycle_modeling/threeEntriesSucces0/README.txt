@@ -1,5 +1,5 @@
 
-Example about Life-cycle, sequence
+Example about Life-cycle, sequential execution of three functions
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt
@@ -18,7 +18,7 @@ function models:
 
 lifecycle model:
 
-  foo ; bar ; zot
+  foo[0] ; bar[0] ; zot
 
 Code
 ======

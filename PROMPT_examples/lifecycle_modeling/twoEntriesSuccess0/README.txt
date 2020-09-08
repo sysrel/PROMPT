@@ -1,5 +1,6 @@
 
-Example about Life-cycle, sequence
+Example about Life-cycle, sequential execution of functions with a 0 success value 
+for the first one 
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt
@@ -18,7 +19,7 @@ function models:
 
 lifecycle model:
 
-  foo ; bar
+  foo[0] ; bar
 
 Code
 ======

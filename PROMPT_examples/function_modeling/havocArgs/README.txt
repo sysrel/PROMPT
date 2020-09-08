@@ -1,5 +1,6 @@
 
-Example about Function models, havoc args list of function
+Example about Function models, havoc (symbolize) args list of function to simulate 
+unconstraint side effects
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt

@@ -1,5 +1,5 @@
 
-Example about Data models, bound constraint
+Example about Data models, a complex bound constraint about argument size
 
 How to run:
 $ ./run.sh foo.bc 2>&1 | tee o.txt

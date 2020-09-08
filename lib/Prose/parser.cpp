@@ -576,10 +576,10 @@ static const yytype_uint16 yyrline[] =
      174,   188,   201,   202,   206,   207,   210,   212,   218,   219,
      223,   224,   225,   228,   240,   241,   244,   245,   246,   250,
      266,   286,   293,   297,   302,   308,   312,   318,   324,   325,
-     329,   334,   338,   343,   348,   356,   428,   429,   430,   431,
-     436,   440,   444,   449,   454,   459,   464,   469,   475,   480,
-     485,   490,   496,   500,   507,   519,   523,   528,   531,   534,
-     538
+     329,   334,   338,   352,   357,   365,   437,   438,   439,   440,
+     445,   449,   453,   458,   463,   468,   473,   478,   484,   489,
+     494,   499,   505,   509,   516,   528,   532,   537,   540,   543,
+     547
 };
 #endif
 
@@ -1867,33 +1867,42 @@ yyreduce:
     {
           std::string fname { (yyvsp[0].y_ident) };
           (yyval.y_id) = new Identifier(fname);
-	  (yyval.y_id)->setSuccessReturnValue(0);
+          ASTNode * n = new ConstantNode(1);
+          Binding b;
+          b.type = "func";
+          b.comptype = "return";
+          b.entity = fname;
+          b.index = -1;
+          BoundAST *bast = new BoundAST;
+          bast->ast = n;
+          bast->bindings[fname] = b; 
+	  (yyval.y_id)->setSuccessConstraint(bast);
 	}
-#line 1873 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1882 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 343 "Prose.y" /* yacc.c:1646  */
+#line 352 "Prose.y" /* yacc.c:1646  */
     {
           std::string fname { (yyvsp[-3].y_ident) };
           (yyval.y_id) = new Identifier(fname);
           (yyval.y_id)->setSuccessReturnValue((yyvsp[-1].y_int));
         }
-#line 1883 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1892 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 348 "Prose.y" /* yacc.c:1646  */
+#line 357 "Prose.y" /* yacc.c:1646  */
     {
           std::string fname { (yyvsp[-3].y_ident) };
           (yyval.y_id) = new Identifier(fname);
           (yyval.y_id)->setSuccessConstraint((yyvsp[0].y_bound));
         }
-#line 1893 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1902 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 356 "Prose.y" /* yacc.c:1646  */
+#line 365 "Prose.y" /* yacc.c:1646  */
     {
 		auto bindings = *(yyvsp[0].y_bind_map);
 		delete (yyvsp[0].y_bind_map);
@@ -1963,173 +1972,173 @@ yyreduce:
                 //$$->ast->print();	
                 //std::cerr << "=============\n";
 	}
-#line 1967 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1976 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 428 "Prose.y" /* yacc.c:1646  */
+#line 437 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_ast) = new ConstantNode((yyvsp[0].y_int)); }
-#line 1973 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1982 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 429 "Prose.y" /* yacc.c:1646  */
+#line 438 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_ast) = new ConstantNode(1); }
-#line 1979 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1988 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 430 "Prose.y" /* yacc.c:1646  */
+#line 439 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_ast) = new ConstantNode(0); }
-#line 1985 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 1994 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 431 "Prose.y" /* yacc.c:1646  */
+#line 440 "Prose.y" /* yacc.c:1646  */
     { 
              std::string id((yyvsp[0].y_ident)); 
              std::cerr << "identifier: " << id << "\n"; 
              (yyval.y_ast) = new IdentifierNode(id); 
         }
-#line 1995 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2004 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 436 "Prose.y" /* yacc.c:1646  */
+#line 445 "Prose.y" /* yacc.c:1646  */
     { 
           (yyval.y_ast) = new ASTNode(NEG); 
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
         }
-#line 2004 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2013 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 440 "Prose.y" /* yacc.c:1646  */
+#line 449 "Prose.y" /* yacc.c:1646  */
     { 
            (yyval.y_ast) = new ASTNode(MINUS);
            (yyval.y_ast)->addChild((yyvsp[0].y_ast));
         }
-#line 2013 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2022 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 444 "Prose.y" /* yacc.c:1646  */
+#line 453 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(PLUS);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2023 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2032 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 449 "Prose.y" /* yacc.c:1646  */
+#line 458 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(MINUS);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast)); 
 	}
-#line 2033 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2042 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 454 "Prose.y" /* yacc.c:1646  */
+#line 463 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(TIMES);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2043 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2052 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 459 "Prose.y" /* yacc.c:1646  */
+#line 468 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(LT);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2053 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2062 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 464 "Prose.y" /* yacc.c:1646  */
+#line 473 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(LTE);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2063 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2072 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 469 "Prose.y" /* yacc.c:1646  */
+#line 478 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(GT);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
           std::cerr << "> exp\n";
 	}
-#line 2074 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2083 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 475 "Prose.y" /* yacc.c:1646  */
+#line 484 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(GTE);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2084 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2093 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 480 "Prose.y" /* yacc.c:1646  */
+#line 489 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(EQ);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2094 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2103 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 485 "Prose.y" /* yacc.c:1646  */
+#line 494 "Prose.y" /* yacc.c:1646  */
     {
           (yyval.y_ast) = new ASTNode(NEQ);
           (yyval.y_ast)->addChild((yyvsp[-2].y_ast));
           (yyval.y_ast)->addChild((yyvsp[0].y_ast));
 	}
-#line 2104 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2113 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 490 "Prose.y" /* yacc.c:1646  */
+#line 499 "Prose.y" /* yacc.c:1646  */
     { (yyval.y_ast) = (yyvsp[-1].y_ast); }
-#line 2110 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2119 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 496 "Prose.y" /* yacc.c:1646  */
+#line 505 "Prose.y" /* yacc.c:1646  */
     {
 		(yyval.y_bind_map) = new std::map<std::string, Binding> { *(yyvsp[0].y_bind_pair) };
 		delete (yyvsp[0].y_bind_pair);
 	}
-#line 2119 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2128 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 500 "Prose.y" /* yacc.c:1646  */
+#line 509 "Prose.y" /* yacc.c:1646  */
     {
 		(yyval.y_bind_map) = (yyvsp[-2].y_bind_map);
 		(yyval.y_bind_map)->insert(*(yyvsp[0].y_bind_pair));
 		delete (yyvsp[0].y_bind_pair);
 	}
-#line 2129 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2138 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 507 "Prose.y" /* yacc.c:1646  */
+#line 516 "Prose.y" /* yacc.c:1646  */
     {
                 if ((yyvsp[0].y_bind)->type == "type" && (yyvsp[0].y_bind)->comptype == "funcname") {
                     std::string f((yyvsp[-2].y_ident));
@@ -2139,63 +2148,63 @@ yyreduce:
 		(yyval.y_bind_pair) = new std::pair<std::string, Binding> { (yyvsp[-2].y_ident), *(yyvsp[0].y_bind) };
 		delete (yyvsp[0].y_bind);
 	}
-#line 2143 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2152 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 519 "Prose.y" /* yacc.c:1646  */
+#line 528 "Prose.y" /* yacc.c:1646  */
     {
 		// fieldConstraintMap
 		(yyval.y_bind) = new Binding { "type", "none", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
 	}
-#line 2152 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2161 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 523 "Prose.y" /* yacc.c:1646  */
+#line 532 "Prose.y" /* yacc.c:1646  */
     {
 		// funcArgConstraintMap
 		// entity: either a type or function name
 		(yyval.y_bind) = new Binding { "type", "sizeof", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
 	}
-#line 2162 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2171 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 528 "Prose.y" /* yacc.c:1646  */
+#line 537 "Prose.y" /* yacc.c:1646  */
     {
                (yyval.y_bind) = new Binding { "type", "funcname", "", (unsigned int)0 };
         }
-#line 2170 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2179 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 531 "Prose.y" /* yacc.c:1646  */
+#line 540 "Prose.y" /* yacc.c:1646  */
     {
 		(yyval.y_bind) = new Binding { "func", "none", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
-	}
-#line 2178 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
-    break;
-
-  case 69:
-#line 534 "Prose.y" /* yacc.c:1646  */
-    {
-                std::string s((yyvsp[0].y_ident));
-		(yyval.y_bind) = new Binding { "func", "return", s, 0 };
 	}
 #line 2187 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
+  case 69:
+#line 543 "Prose.y" /* yacc.c:1646  */
+    {
+                std::string s((yyvsp[0].y_ident));
+		(yyval.y_bind) = new Binding { "func", "return", s, 0 };
+	}
+#line 2196 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+    break;
+
   case 70:
-#line 538 "Prose.y" /* yacc.c:1646  */
+#line 547 "Prose.y" /* yacc.c:1646  */
     {
       		(yyval.y_bind) = new Binding { "func", "argsize", (yyvsp[-2].y_ident), (unsigned int)(yyvsp[0].y_int) };
         }
-#line 2195 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2204 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
     break;
 
 
-#line 2199 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
+#line 2208 "/home/tuba/Documents/releases/PROMPT/lib/Prose/parser.cpp" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2430,5 +2439,5 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 542 "Prose.y" /* yacc.c:1906  */
+#line 551 "Prose.y" /* yacc.c:1906  */
 
