@@ -1,3 +1,0 @@
-/home/tuba/Documents/tools/PROMPT/pmguidedsymex/testprompt/bin/klee -prose-api-model=model.txt -max-time=500 -watchdog openssl_1_0_1_c_libssl_libcrypto.bc
-PID: 10532
-Started: 2020-09-08 14:04:01
