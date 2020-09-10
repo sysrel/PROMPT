@@ -3,6 +3,11 @@
 /*.bak*
 /*.~
 /*klee-last
+/*/*klee-last
+/*/*/*klee-last
+/*/*/*klee-last
+/*/*/*/*klee-last
+/*/*/*/*/*klee-last
 /*klee-out*
 /*/*klee-out*
 /*/*/*klee-out*
