@@ -15,7 +15,7 @@ int l2cap_get_conf_opt_PROSE(void **ptr, int *type, int *olen,
    int len;
 
    opt->type = 1;
-   opt->len = 4;
+   opt->len = 2;
 
    len = L2CAP_CONF_OPT_SIZE + opt->len;
    *ptr += len;

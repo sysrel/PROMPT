@@ -1,0 +1,12 @@
+array i8[256] : w32 -> w8 = symbolic
+(query [(Eq 1 (Read w8 0 i8))
+         (Eq false
+             (Eq 0
+                 N0:(Or w32 (Shl w32 (ZExt w32 (Read w8 1 i8))
+                                     8)
+                            (ZExt w32 (Read w8 2 i8)))))
+         (Ult N1:(ZExt w64 N0) 16)
+         (Eq 6 (And w64 N1 7))
+         (Eq false
+             (Ult (Add w64 18446744073709551615 N1) 7))]
+        false)

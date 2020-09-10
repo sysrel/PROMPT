@@ -1,0 +1,12 @@
+global settings:
+
+	init funcptrs to null on; 
+
+data models:
+
+function models:
+
+lifecycle model:
+
+	entry-point tls1_process_heartbeat
+

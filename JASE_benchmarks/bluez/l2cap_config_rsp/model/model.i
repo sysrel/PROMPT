@@ -1,4 +1,4 @@
-# 1 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c"
+# 1 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 312 "<built-in>" 3
@@ -12,7 +12,7 @@
 # 5 "././include/linux/kconfig.h" 2
 # 16 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 1 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 # 1 "./include/linux/module.h" 1
 
 
@@ -19693,7 +19693,7 @@ static inline __attribute__((unused)) __attribute__((no_instrument_function)) bo
 {
  return true;
 }
-# 2 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 2 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 
 # 1 "./include/linux/debugfs.h" 1
 # 18 "./include/linux/debugfs.h"
@@ -28754,7 +28754,7 @@ ssize_t debugfs_read_file_bool(struct file *file, char *user_buf,
 
 ssize_t debugfs_write_file_bool(struct file *file, const char *user_buf,
     size_t count, loff_t *ppos);
-# 4 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 4 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 # 1 "./include/linux/crc16.h" 1
 # 20 "./include/linux/crc16.h"
 extern u16 const crc16_table[256];
@@ -28765,7 +28765,7 @@ static inline __attribute__((unused)) __attribute__((no_instrument_function)) u1
 {
  return (crc >> 8) ^ crc16_table[(crc ^ data) & 0xff];
 }
-# 5 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 5 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 # 1 "./include/linux/filter.h" 1
 # 11 "./include/linux/filter.h"
 # 1 "./include/linux/compat.h" 1
@@ -58623,7 +58623,7 @@ struct bpf_sock_ops_kern {
   u32 replylong[4];
  };
 };
-# 6 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 6 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 
 # 1 "./include/net/bluetooth/bluetooth.h" 1
 # 28 "./include/net/bluetooth/bluetooth.h"
@@ -63190,7 +63190,7 @@ int mgmt_init(void);
 void mgmt_exit(void);
 
 void bt_sock_reclassify_lock(struct sock *sk, int proto);
-# 8 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 8 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 # 1 "./include/net/bluetooth/hci_core.h" 1
 # 28 "./include/net/bluetooth/hci_core.h"
 # 1 "./include/linux/leds.h" 1
@@ -66502,7 +66502,7 @@ void hci_le_start_enc(struct hci_conn *conn, __le16 ediv, __le64 rand,
 
 void hci_copy_identity_address(struct hci_dev *hdev, bdaddr_t *bdaddr,
           u8 *bdaddr_type);
-# 9 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 9 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 # 1 "./include/net/bluetooth/l2cap.h" 1
 # 30 "./include/net/bluetooth/l2cap.h"
 # 1 "./arch/x86/include/asm/unaligned.h" 1
@@ -67235,7 +67235,7 @@ void l2cap_conn_put(struct l2cap_conn *conn);
 
 int l2cap_register_user(struct l2cap_conn *conn, struct l2cap_user *user);
 void l2cap_unregister_user(struct l2cap_conn *conn, struct l2cap_user *user);
-# 10 "/home/tuba/Documents/experiments/ASTransferrability/bluetooth/noinlining/blueborne/model/model.c" 2
+# 10 "/home/tuba/Documents/experiments/JASE_benchmarks/bluez/l2cap_config_rsp/model/model.c" 2
 
 int l2cap_get_conf_opt_PROSE(void **ptr, int *type, int *olen,
          unsigned long *val)
@@ -67244,7 +67244,7 @@ int l2cap_get_conf_opt_PROSE(void **ptr, int *type, int *olen,
    int len;
 
    opt->type = 1;
-   opt->len = 4;
+   opt->len = 2;
 
    len = 2 + opt->len;
    *ptr += len;
