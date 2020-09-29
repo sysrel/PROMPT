@@ -613,9 +613,9 @@ ref<Expr> generateExp(BoundAST &bast, ASTNode *n, const MemoryObject *mo, const 
       unsigned w = getWidth(bast,n,st);
       ref<Expr> c1 = generateExp(bast,n->getChild(0),mo,obj,baseOffset,st,sl,c,offset,size,w);
       ref<Expr> c2 = generateExp(bast,n->getChild(1),mo,obj,baseOffset,st,sl,c,offset,size,w);
-      llvm::errs() << "w: " << w << "\n";
-      llvm::errs() << "width1: " << c1->getWidth() << "\n";
-      llvm::errs() << "width2: " << c2->getWidth() << "\n";
+      //llvm::errs() << "w: " << w << "\n";
+      //llvm::errs() << "width1: " << c1->getWidth() << "\n";
+      //llvm::errs() << "width2: " << c2->getWidth() << "\n";
       if (!c1.isNull() && !c2.isNull())
          res = EqExpr::create(c1,c2);  
       return res;

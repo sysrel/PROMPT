@@ -3446,7 +3446,8 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
         if (state.activeThreads())
            state.setWaitingForThreadsToTerminate(true);
         if (state.hasLCM()) {
-           if (!retval.isNull() && state.lcmStepMovesWhenReturns(removeDotSuffix(rf->getName()))) {
+           if (!retval.isNull() && 
+                   state.lcmStepMovesWhenReturns(removeDotSuffix(rf->getName()))) {
               BoundAST *bast = state.getCurrentSuccessConstraint();
               bool continues = false;
               ref<Expr> rs = NULL;
@@ -3489,8 +3490,14 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
               state.updateLCMState();
            }
            else { 
-               llvm::outs() << "no, step not moving at..\n";
-               llvm::outs() << state.prevPC->inst << "\n";
+               if (state.lcmStepMovesWhenReturns(removeDotSuffix(rf->getName()))) {
+                  llvm::errs() << "void return, lcm continues with the next sequential step\n";
+                  state.updateLCMState();
+               }
+               else {
+                  llvm::outs() << "no, step not moving at..\n";
+                  llvm::outs() << state.prevPC->inst << "\n";
+               }
            }
         }
       }
